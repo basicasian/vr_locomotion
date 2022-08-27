@@ -5202,7 +5202,7 @@ MonoBehaviour:
   m_EnableStrafe: 1
   m_UseGravity: 1
   m_GravityApplicationMode: 0
-  m_ForwardSource: {fileID: 0}
+  m_ForwardSource: {fileID: 164437586}
   m_LeftHandMoveAction:
     m_UseReference: 0
     m_Action:
