@@ -1395,6 +1395,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Body Based Steering ",
+                    "type": "Button",
+                    "id": "7117eb90-289f-4f23-956e-4b8d85bacc8d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1417,6 +1426,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Colour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7bdbbcd5-4457-4c8b-a5b9-cbb20c957e88",
+                    "path": "<XRInputV1::HTC::HTCViveControllerOpenXR>/triggerpressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Body Based Steering ",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
