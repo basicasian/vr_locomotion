@@ -12,6 +12,11 @@ public class CountCollision : MonoBehaviour
 
     public TextMeshProUGUI countText;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        countText.text = "Collisions: " + count.ToString();
+    }
     private void OnTriggerEnter(Collider other)
     {
         count++;

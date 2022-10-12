@@ -11,13 +11,16 @@ public class Procedure : MonoBehaviour
     float countdownTime = 180.0f;
     Boolean startGame = false;
 
+    public TextMeshProUGUI gameText;
     public TextMeshProUGUI timerText;
     public InputActionReference startGameReference = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerText.text = "to start game click any button on your controller";
+        TimeSpan t = TimeSpan.FromSeconds(countdownTime);
+        timerText.text = t.ToString(@"mm\:ss");
+        gameText.text = "to start game press the trigger";
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class Procedure : MonoBehaviour
 
             if (countdownTime < 0)
             {
-                timerText.text = "time's up!";
+                gameText.text = "time's up!";
             }
         }
     }
@@ -48,6 +51,7 @@ public class Procedure : MonoBehaviour
     private void StartGame(InputAction.CallbackContext context)
     {
         startGame = true;
+        gameText.text = "";
     }
 
 }
