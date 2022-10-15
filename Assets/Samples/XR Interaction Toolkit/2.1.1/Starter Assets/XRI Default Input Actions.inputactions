@@ -1413,6 +1413,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PickUp Mushroom",
+                    "type": "Button",
+                    "id": "695d8f7c-63f1-439c-9eff-8f59a4d58bc3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1457,6 +1466,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Start Game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3de60417-27f5-4335-b585-d4a20c50488e",
+                    "path": "<ViveController>/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUp Mushroom",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

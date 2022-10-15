@@ -8,8 +8,8 @@ using TMPro;
 public class CountCollision : MonoBehaviour
 {
     public XROrigin xrOrigin = null;
-    private int count = 0;
 
+    private int count = 0;
     public TextMeshProUGUI countText;
 
     // Start is called before the first frame update
@@ -17,12 +17,11 @@ public class CountCollision : MonoBehaviour
     {
         countText.text = "Collisions: " + count.ToString();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         count++;
-        countText.text = "Collisions: " + count.ToString() ;
-        //countText.text +=  " - with" + other.ToString();
-
+        countText.text = "Collisions: " + count.ToString();
     }
 
 }
