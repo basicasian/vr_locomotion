@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 235118926728517903}
   - component: {fileID: 235118926728517888}
   - component: {fileID: 235118926728517889}
-  - component: {fileID: 5747039460828750600}
+  - component: {fileID: 305988978762399447}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: RedMushroom
@@ -163,7 +163,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 305988978762399447}
+        m_TargetAssemblyTypeName: PickUpMushroom, Assembly-CSharp
+        m_MethodName: SelectExited
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -238,7 +250,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &5747039460828750600
+--- !u!114 &305988978762399447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f6061828f0a264a93c3f2df686efc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpReference: {fileID: 0}
   countMushroomText: {fileID: 0}
 --- !u!1 &235118926909552742
 GameObject:

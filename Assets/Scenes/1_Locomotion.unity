@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028468, g: 0.22571579, b: 0.30692378, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028417, g: 0.22571519, b: 0.30692276, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5111,7 +5111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xrOrigin: {fileID: 783844408}
   countText: {fileID: 512421985}
-  countMushroomText: {fileID: 544451233}
 --- !u!114 &783844412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9714,9 +9713,53 @@ PrefabInstance:
     m_TransformParent: {fileID: 1023060337}
     m_Modifications:
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 330560046}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 56f6061828f0a264a93c3f2df686efc3, type: 3}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118926728517903, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 235118928460625473, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_RootOrder
       value: 0
