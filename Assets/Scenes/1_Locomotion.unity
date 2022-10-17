@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028417, g: 0.22571519, b: 0.30692276, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028468, g: 0.22571579, b: 0.30692378, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7017,6 +7017,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c60edd51c065ceb46b345849a03bc106, type: 3}
+--- !u!114 &1011254146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 305988978762399447, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+  m_PrefabInstance: {fileID: 1365709530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f6061828f0a264a93c3f2df686efc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1015341752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9726,7 +9737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9735,18 +9746,18 @@ PrefabInstance:
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: 56f6061828f0a264a93c3f2df686efc3, type: 3}
+      objectReference: {fileID: 1011254146}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: SelectExited
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: 
+      value: PickUpMushroom, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -9754,7 +9765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517889, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 235118926728517903, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_IsTrigger
