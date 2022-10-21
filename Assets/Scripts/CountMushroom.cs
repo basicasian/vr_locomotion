@@ -54,20 +54,4 @@ public class CountMushroom : MonoBehaviour
 
     }
 
-    /*
-    public void PickUp()
-    {
-        //gameObject.SetActive(false);
-        if (gameObject.CompareTag("RedMushroom"))
-        {
-            countRedMushroom++;
-        }
-
-        if (gameObject.CompareTag("BrownMushroom"))
-        {
-            countBrownMushroom++;
-        }
-
-    }*/
-
 }
