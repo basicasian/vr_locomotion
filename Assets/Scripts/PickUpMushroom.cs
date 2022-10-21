@@ -11,7 +11,7 @@ public class PickUpMushroom : MonoBehaviour
 
     public void SelectExited()
     {
-       gameObject.SetActive(false);
+      //gameObject.SetActive(false);
     }
 
 }

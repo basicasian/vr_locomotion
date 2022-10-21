@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(XRDirectInteractor))]
 public class CountMushroom : MonoBehaviour
 {
     private int countRedMushroom = 0;
@@ -11,6 +13,15 @@ public class CountMushroom : MonoBehaviour
 
     public TextMeshProUGUI countMushroomText;
 
+    // [SerializeField] private InputActionReference inputActionReference = null;
+    private XRDirectInteractor interactor;
+
+    List<IXRInteractable> grabInteractables = new List<IXRInteractable>();
+
+    private void Awake()
+    {
+        interactor = GetComponent<XRDirectInteractor>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +30,31 @@ public class CountMushroom : MonoBehaviour
             + "Brown Mushrooms: " + countBrownMushroom.ToString();
     }
 
-    public void OnSelectExit(XRBaseInteractable interactable)
+    public void PickUp()
     {
-        if (interactable.CompareTag("RedMushroom"))
-        {
-            countRedMushroom++;
-        }
+        interactor.GetValidTargets(grabInteractables);
 
-        if (interactable.CompareTag("BrownMushroom"))
+        foreach (var interactable in grabInteractables)
         {
-            countBrownMushroom++;
+
+            if (interactable.transform.CompareTag("RedMushroom")) {
+                countRedMushroom++;
+                interactable.transform.gameObject.SetActive(false); 
+            }
+
+            if (interactable.transform.CompareTag("BrownMushroom"))
+            {
+                countBrownMushroom++;
+                interactable.transform.gameObject.SetActive(false);
+            }
         }
+        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "\n"
+           + "Brown Mushrooms: " + countBrownMushroom.ToString();
+
+
     }
 
+    /*
     public void PickUp()
     {
         //gameObject.SetActive(false);
@@ -45,6 +68,6 @@ public class CountMushroom : MonoBehaviour
             countBrownMushroom++;
         }
 
-    }
+    }*/
 
 }
