@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Procedure : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class Procedure : MonoBehaviour
     public TextMeshProUGUI gameText;
     public TextMeshProUGUI timerText;
     public InputActionReference startGameReference = null;
+
+    public GameObject rightGameObject;
+    public GameObject leftGameObject;
+
+    private XRRayInteractor rayInteractor;
+    private XRDirectInteractor directInteractor;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +47,13 @@ public class Procedure : MonoBehaviour
             if (countdownTime < 0)
             {
                 gameText.text = "time's up!";
+
+                rightGameObject.SetActive(false);
+                leftGameObject.SetActive(false);
+
+                directInteractor.allowActivate = false;
+                directInteractor.allowSelect = false;
+                rayInteractor.enabled = false;
             }
         }
     }
@@ -47,6 +61,13 @@ public class Procedure : MonoBehaviour
     private void Awake()
     {
         startGameReference.action.started += StartGame;
+
+        rightGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
+        leftGameObject = GameObject.FindGameObjectWithTag("LeftRayHand");
+
+        directInteractor = rightGameObject.GetComponent<XRDirectInteractor>();
+        rayInteractor = leftGameObject.GetComponent<XRRayInteractor>();
+
     }
     private void StartGame(InputAction.CallbackContext context)
     {
