@@ -26,8 +26,8 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "\n"
-            + "Brown Mushrooms: " + countBrownMushroom.ToString();
+        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
+            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
     }
 
     public void PickUp()
@@ -48,8 +48,8 @@ public class CountMushroom : MonoBehaviour
                 interactable.transform.gameObject.SetActive(false);
             }
         }
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "\n"
-           + "Brown Mushrooms: " + countBrownMushroom.ToString();
+        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
+            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
 
 
     }

@@ -12,9 +12,11 @@ public class BodyBasedSteering : MonoBehaviour
 
     public float speed = 0;
 
+    private bool isActive = true;
+
     private void Update()
     {
-        if (steeringReference.action.IsPressed())
+        if (steeringReference.action.IsPressed() && isActive)
         {
             Steering();
         }
@@ -25,4 +27,10 @@ public class BodyBasedSteering : MonoBehaviour
         Vector3 deltaSteering = (Vector3.Scale(mainCamera.transform.forward, new Vector3(1.0f, 0.0f, 1.0f))); 
         xrOrigin.transform.position += deltaSteering * speed * Time.deltaTime;
     }
+
+    public void SetActive(bool value)
+    {
+        isActive = value;
+    }
+
 }

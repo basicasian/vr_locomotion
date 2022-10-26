@@ -9,6 +9,7 @@ TagManager:
   - BrownMushroom
   - LeftRayHand
   - RightDirectHand
+  - Locomotion
   layers:
   - Default
   - TransparentFX

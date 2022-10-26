@@ -9,19 +9,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Procedure : MonoBehaviour
 {
 
-    float countdownTime = 180.0f;
+    float countdownTime = 120.0f;
     Boolean startGame = false;
 
     public TextMeshProUGUI gameText;
     public TextMeshProUGUI timerText;
     public InputActionReference startGameReference = null;
 
-    public GameObject rightGameObject;
-    public GameObject leftGameObject;
+    public GameObject rightHandGameObject;
+    public GameObject leftHandGameObject;
 
-    private XRRayInteractor rayInteractor;
-    private XRDirectInteractor directInteractor;
-
+    public BodyBasedSteering bodybasedScript;
+        
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +34,6 @@ public class Procedure : MonoBehaviour
     {
         if (startGame)
         {
-
             if (countdownTime > 0)
             {
                 countdownTime -= Time.deltaTime;
@@ -48,12 +46,10 @@ public class Procedure : MonoBehaviour
             {
                 gameText.text = "time's up!";
 
-                rightGameObject.SetActive(false);
-                leftGameObject.SetActive(false);
+                rightHandGameObject.SetActive(false);
+                leftHandGameObject.SetActive(false);
 
-                directInteractor.allowActivate = false;
-                directInteractor.allowSelect = false;
-                rayInteractor.enabled = false;
+                bodybasedScript.SetActive(false);
             }
         }
     }
@@ -62,12 +58,9 @@ public class Procedure : MonoBehaviour
     {
         startGameReference.action.started += StartGame;
 
-        rightGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
-        leftGameObject = GameObject.FindGameObjectWithTag("LeftRayHand");
-
-        directInteractor = rightGameObject.GetComponent<XRDirectInteractor>();
-        rayInteractor = leftGameObject.GetComponent<XRRayInteractor>();
-
+        rightHandGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
+        leftHandGameObject = GameObject.FindGameObjectWithTag("LeftRayHand");
+;
     }
     private void StartGame(InputAction.CallbackContext context)
     {
