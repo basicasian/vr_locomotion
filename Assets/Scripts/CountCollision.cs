@@ -22,7 +22,6 @@ public class CountCollision : MonoBehaviour
     {
         if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
         {
-            Debug.Log("not a red or brown mushroom");
             count++;
             countText.text = "Collisions: " + count.ToString();
         }

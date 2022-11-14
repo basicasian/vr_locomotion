@@ -34,18 +34,21 @@ public class Procedure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f && 
-            cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
+        if (!startGame)
         {
-            startPosition = true;
-            gameText.text = "to start game press the trigger";
-        } else
-        {
-            startPosition = false;
-            gameText.text = "please go to the yellow mark of the play area";
-        }
-
-        if (startGame && startPosition)
+            if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
+                cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
+            {
+                startPosition = true;
+                gameText.text = "to start game press the trigger";
+            }
+            else
+            {
+                startPosition = false;
+                gameText.text = "please go to the yellow mark of the play area";
+            }
+        } 
+        else 
         {
             if (countdownTime > 0)
             {
@@ -64,7 +67,7 @@ public class Procedure : MonoBehaviour
 
                 bodybasedScript.SetActive(false);
             }
-        }
+        } 
     }
 
     private void Awake()
@@ -83,10 +86,7 @@ public class Procedure : MonoBehaviour
             startGame = true;
             gameText.text = "";
 
-        } else
-        {
-            startGame = false;
-        }
+        } 
        
     }
 
