@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Procedure : MonoBehaviour
 {
 
-    float countdownTime = 120.0f;
+    public float countdownTime;
     Boolean startGame = false;
 
     public TextMeshProUGUI gameText;
@@ -18,6 +18,7 @@ public class Procedure : MonoBehaviour
 
     public GameObject rightHandGameObject;
     public GameObject leftHandGameObject;
+    public GameObject cameraGameObject;
 
     public BodyBasedSteering bodybasedScript;
         
@@ -58,8 +59,9 @@ public class Procedure : MonoBehaviour
     {
         startGameReference.action.started += StartGame;
 
-        rightHandGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
-        leftHandGameObject = GameObject.FindGameObjectWithTag("LeftRayHand");
+       // not needed because game objects are public
+       // rightHandGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
+       // leftHandGameObject = GameObject.FindGameObjectWithTag("LeftRayHand");
 ;
     }
     private void StartGame(InputAction.CallbackContext context)
