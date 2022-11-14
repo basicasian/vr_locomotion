@@ -20,8 +20,13 @@ public class CountCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        count++;
-        countText.text = "Collisions: " + count.ToString();
+        if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
+        {
+            Debug.Log("not a red or brown mushroom");
+            count++;
+            countText.text = "Collisions: " + count.ToString();
+        }
+       
     }
 
 }

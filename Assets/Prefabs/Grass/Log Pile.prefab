@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165382678323940764}
+  - component: {fileID: -8520900177660321252}
   m_Layer: 0
   m_Name: Log Pile
   m_TagString: Untagged
@@ -37,6 +38,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &-8520900177660321252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064355422497507932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1107489712668909791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,6 +61,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (1)
@@ -118,6 +139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (6)
@@ -192,6 +217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (4)
@@ -266,6 +295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (3)
@@ -340,6 +373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (5)
@@ -414,6 +451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165382678323940764}
     m_Modifications:
+    - target: {fileID: -1600406664256457907, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
       propertyPath: m_Name
       value: Branch_01 (7)
