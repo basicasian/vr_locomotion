@@ -11,6 +11,7 @@ public class Procedure : MonoBehaviour
 
     public float countdownTime;
     Boolean startGame = false;
+    Boolean startPosition = false;
 
     public TextMeshProUGUI gameText;
     public TextMeshProUGUI timerText;
@@ -27,13 +28,24 @@ public class Procedure : MonoBehaviour
     {
         TimeSpan t = TimeSpan.FromSeconds(countdownTime);
         timerText.text = t.ToString(@"mm\:ss");
-        gameText.text = "to start game press the trigger";
+        gameText.text = "please go to the yellow mark of the play area";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (startGame)
+        if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f && 
+            cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
+        {
+            startPosition = true;
+            gameText.text = "to start game press the trigger";
+        } else
+        {
+            startPosition = false;
+            gameText.text = "please go to the yellow mark of the play area";
+        }
+
+        if (startGame && startPosition)
         {
             if (countdownTime > 0)
             {
@@ -66,8 +78,16 @@ public class Procedure : MonoBehaviour
     }
     private void StartGame(InputAction.CallbackContext context)
     {
-        startGame = true;
-        gameText.text = "";
+        if (startPosition)
+        {
+            startGame = true;
+            gameText.text = "";
+
+        } else
+        {
+            startGame = false;
+        }
+       
     }
 
 }
