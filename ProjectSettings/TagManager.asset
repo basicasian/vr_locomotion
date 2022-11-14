@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUp
+  - RedMushroom
+  - BrownMushroom
+  - LeftRayHand
+  - RightDirectHand
+  - Locomotion
   layers:
   - Default
   - TransparentFX
