@@ -16,8 +16,8 @@ public class DataRecording : MonoBehaviour
     private TextWriter tw;
     private float currentTime = 0;
 
-    public CountCollision countCollision;
-
+    public GameObject cameraGameObject; // real life
+    public GameObject xrOriginGameObject; // game
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +47,8 @@ public class DataRecording : MonoBehaviour
         tw.WriteLine(
                    Time.frameCount + ";" + t.ToString(@"mm\:ss\:fff") + ";"
                 + "countCollision.collisionCount" + ";" + redMushroomCount + ";" + brownMushroomCount + ";"
-                + RLPosition.x + ";" + RLPosition.y + ";" + RLPosition.z + ";"
-                + gamePosition.x + ";" + gamePosition.y + ";" + gamePosition.z);
+                + cameraGameObject.transform.position.x + ";" + cameraGameObject.transform.position.y + ";" + cameraGameObject.transform.position.z + ";"
+                + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z);
 
         tw.Close();
         

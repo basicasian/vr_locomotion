@@ -29,6 +29,7 @@ public class Procedure : MonoBehaviour
         TimeSpan t = TimeSpan.FromSeconds(countdownTime);
         timerText.text = t.ToString(@"mm\:ss");
         gameText.text = "please go to the yellow mark of the play area";
+
     }
 
     // Update is called once per frame

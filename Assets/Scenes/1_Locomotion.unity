@@ -5395,7 +5395,6 @@ GameObject:
   - component: {fileID: 783844413}
   - component: {fileID: 783844416}
   - component: {fileID: 783844415}
-  - component: {fileID: 783844414}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -5487,19 +5486,6 @@ MonoBehaviour:
   mainCamera: {fileID: 153130384}
   xrOrigin: {fileID: 783844408}
   speed: 2
---- !u!114 &783844414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783844406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d480803e807bd834488f3ea2daa32d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mushroomCountText: {fileID: 544451233}
 --- !u!114 &783844415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12114,7 +12100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filename: test
-  countCollision: {fileID: 0}
+  cameraGameObject: {fileID: 153130379}
+  xrOriginGameObject: {fileID: 783844406}
 --- !u!4 &1575796352
 Transform:
   m_ObjectHideFlags: 0
@@ -14507,7 +14494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d480803e807bd834488f3ea2daa32d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mushroomCountText: {fileID: 0}
+  mushroomCountText: {fileID: 544451233}
 --- !u!4 &1900103802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
