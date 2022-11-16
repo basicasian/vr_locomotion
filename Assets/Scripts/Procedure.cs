@@ -10,7 +10,7 @@ public class Procedure : MonoBehaviour
 {
 
     public float countdownTime;
-    Boolean startGame = false;
+    public Boolean startGame = false;
     Boolean startPosition = false;
 
     public TextMeshProUGUI gameText;

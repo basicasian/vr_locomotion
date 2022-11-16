@@ -13,7 +13,9 @@ public class CountMushroom : MonoBehaviour
 
     public TextMeshProUGUI mushroomCountText;
 
-    // [SerializeField] private InputActionReference inputActionReference = null;
+    public GameObject xrOriginGameObject;
+    private Procedure procedure;
+
     private XRDirectInteractor interactor;
 
     List<IXRInteractable> grabInteractables = new List<IXRInteractable>();
@@ -28,30 +30,35 @@ public class CountMushroom : MonoBehaviour
     {
         mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
             + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
+
+        procedure = xrOriginGameObject.GetComponent<Procedure>();
     }
 
     public void PickUp()
     {
-        interactor.GetValidTargets(grabInteractables);
-
-        foreach (var interactable in grabInteractables)
+        if (procedure.startGame)
         {
+            interactor.GetValidTargets(grabInteractables);
 
-            if (interactable.transform.CompareTag("RedMushroom")) 
+            foreach (var interactable in grabInteractables)
             {
-                redMushroomCount++;
-                interactable.transform.gameObject.SetActive(false); 
-            }
 
-            if (interactable.transform.CompareTag("BrownMushroom"))
-            {
-                brownMushroomCount++;
-                interactable.transform.gameObject.SetActive(false);
+                if (interactable.transform.CompareTag("RedMushroom"))
+                {
+                    redMushroomCount++;
+                    interactable.transform.gameObject.SetActive(false);
+                }
+
+                if (interactable.transform.CompareTag("BrownMushroom"))
+                {
+                    brownMushroomCount++;
+                    interactable.transform.gameObject.SetActive(false);
+                }
             }
+            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
+
         }
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
-
     }
 
 }

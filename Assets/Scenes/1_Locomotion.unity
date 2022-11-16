@@ -1032,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionCount: 0
   countText: {fileID: 512421985}
+  xrOriginGameObject: {fileID: 783844406}
 --- !u!1001 &156511930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5478,6 +5479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTime: 120
+  startGame: 0
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
   startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -14498,6 +14500,7 @@ MonoBehaviour:
   redMushroomCount: 0
   brownMushroomCount: 0
   mushroomCountText: {fileID: 544451233}
+  xrOriginGameObject: {fileID: 783844406}
 --- !u!4 &1900103802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
