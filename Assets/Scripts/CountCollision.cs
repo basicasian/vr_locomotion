@@ -7,30 +7,29 @@ using TMPro;
 
 public class CountCollision : MonoBehaviour
 {
-    public XROrigin xrOrigin = null;
 
-    private int count = 0;
+    public int collisionCount = 0;
     public TextMeshProUGUI countText;
 
     // Start is called before the first frame update
     void Start()
     {
-        countText.text = "Collisions: " + count.ToString();
+        countText.text = "Collisions: " + collisionCount.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
         {
-            count++;
-            countText.text = "Collisions: " + count.ToString();
+            collisionCount++;
+            countText.text = "Collisions: " + collisionCount.ToString();
         }
        
     }
 
     public int getCollisionCount()
     {
-        return count;
+        return collisionCount;
     }
 
 

@@ -53,13 +53,4 @@ public class CountMushroom : MonoBehaviour
 
     }
 
-    public int getRedMushroomCount()
-    {
-        return redMushroomCount;
-    }
-
-    public int getBrownMushroomCount()
-    {
-        return brownMushroomCount;
-    }
 }
