@@ -37,7 +37,8 @@ public class CountMushroom : MonoBehaviour
         foreach (var interactable in grabInteractables)
         {
 
-            if (interactable.transform.CompareTag("RedMushroom")) {
+            if (interactable.transform.CompareTag("RedMushroom")) 
+            {
                 redMushroomCount++;
                 interactable.transform.gameObject.SetActive(false); 
             }

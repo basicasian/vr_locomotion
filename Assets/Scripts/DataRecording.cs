@@ -19,6 +19,7 @@ public class DataRecording : MonoBehaviour
 
     public GameObject rightHandGameObject; // mushroom
     private CountMushroom countMushroom;
+    private CountCollision countCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,11 @@ public class DataRecording : MonoBehaviour
 
         // false = overwrite
         tw = new StreamWriter(filename, false);
-        tw.WriteLine("Frame ID; Time; Collisions Count; Red Mushroom Count; Brown Mushroom Count; RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z");
+        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; Navigation State");
         tw.Close();
 
         countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
-
+        countCollision = xrOriginGameObject.GetComponent<CountCollision>();
     }
 
     // Update is called once per frame
