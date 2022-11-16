@@ -1745,9 +1745,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 832378031}
   - {fileID: 654521070}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &294589806
 MonoBehaviour:
@@ -2274,7 +2275,7 @@ RectTransform:
   - {fileID: 710104429}
   - {fileID: 162033130}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2510,7 +2511,7 @@ Transform:
   - {fileID: 156511931}
   - {fileID: 1528459292}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &423394849 stripped
 Transform:
@@ -4660,7 +4661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 294589805}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &665362723
 PrefabInstance:
@@ -5876,7 +5877,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1482106333}
+  m_Father: {fileID: 294589805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &832378032
@@ -7265,7 +7266,7 @@ Transform:
   - {fileID: 1356606853}
   - {fileID: 114744559}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980376912
 PrefabInstance:
@@ -7649,7 +7650,7 @@ Transform:
   - {fileID: 942277075}
   - {fileID: 1910915388}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1010205061
 PrefabInstance:
@@ -7805,7 +7806,7 @@ Transform:
   - {fileID: 1573829317}
   - {fileID: 1226786913}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1023446274 stripped
 Transform:
@@ -7907,7 +7908,7 @@ Transform:
   - {fileID: 1630746130}
   - {fileID: 1309785735}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1029061545
 PrefabInstance:
@@ -8289,7 +8290,7 @@ Transform:
   - {fileID: 1391152273}
   - {fileID: 2091774889}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1064214407
 PrefabInstance:
@@ -11599,7 +11600,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 832378031}
   - {fileID: 1023060337}
   - {fileID: 422405941}
   - {fileID: 1007966634}
@@ -12102,6 +12102,7 @@ MonoBehaviour:
   filename: test
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
+  rightHandGameObject: {fileID: 1895453385}
 --- !u!4 &1575796352
 Transform:
   m_ObjectHideFlags: 0
@@ -14494,6 +14495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d480803e807bd834488f3ea2daa32d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMushroomCount: 0
+  brownMushroomCount: 0
   mushroomCountText: {fileID: 544451233}
 --- !u!4 &1900103802 stripped
 Transform:

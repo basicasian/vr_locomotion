@@ -8,8 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(XRDirectInteractor))]
 public class CountMushroom : MonoBehaviour
 {
-    private int redMushroomCount = 0;
-    private int brownMushroomCount = 0;
+    public int redMushroomCount = 0;
+    public int brownMushroomCount = 0;
 
     public TextMeshProUGUI mushroomCountText;
 
