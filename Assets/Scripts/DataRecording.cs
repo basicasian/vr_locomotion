@@ -24,7 +24,10 @@ public class DataRecording : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        filename = Application.dataPath + "/test.csv";
+        DateTime dt = DateTime.Now;
+        string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
+
+        filename = Application.dataPath + "/DataRecording/" + dateString + ".csv";
 
         // false = overwrite
         tw = new StreamWriter(filename, false);

@@ -808,6 +808,7 @@ GameObject:
   - component: {fileID: 153130382}
   - component: {fileID: 153130381}
   - component: {fileID: 153130386}
+  - component: {fileID: 153130387}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1017,6 +1018,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &153130387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153130379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3977f025722693146b1fbd6a69cbaae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCount: 0
+  countText: {fileID: 512421985}
 --- !u!1001 &156511930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5395,7 +5410,6 @@ GameObject:
   - component: {fileID: 783844412}
   - component: {fileID: 783844413}
   - component: {fileID: 783844416}
-  - component: {fileID: 783844415}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -5487,20 +5501,6 @@ MonoBehaviour:
   mainCamera: {fileID: 153130384}
   xrOrigin: {fileID: 783844408}
   speed: 2
---- !u!114 &783844415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783844406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3977f025722693146b1fbd6a69cbaae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionCount: 0
-  countText: {fileID: 512421985}
 --- !u!114 &783844416
 MonoBehaviour:
   m_ObjectHideFlags: 0
