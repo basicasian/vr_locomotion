@@ -32,7 +32,7 @@ public class DataRecording : MonoBehaviour
         tw.Close();
 
         countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
-        countCollision = xrOriginGameObject.GetComponent<CountCollision>();
+        countCollision = cameraGameObject.GetComponent<CountCollision>();
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class DataRecording : MonoBehaviour
 
         tw.WriteLine(
                    Time.frameCount + ";" + t.ToString(@"mm\:ss\:ff") + ";"
-                + "countCollision.collisionCount" + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
+                + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
                 + cameraGameObject.transform.position.x + ";" + cameraGameObject.transform.position.y + ";" + cameraGameObject.transform.position.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z);
 
