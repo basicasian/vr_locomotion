@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 using TMPro;
 
+// has to be attached to main camera because of the capsule collider 
 public class CountCollision : MonoBehaviour
 {
 
