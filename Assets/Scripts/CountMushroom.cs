@@ -8,10 +8,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(XRDirectInteractor))]
 public class CountMushroom : MonoBehaviour
 {
-    private int countRedMushroom = 0;
-    private int countBrownMushroom = 0;
+    private int redMushroomCount = 0;
+    private int brownMushroomCount = 0;
 
-    public TextMeshProUGUI countMushroomText;
+    public TextMeshProUGUI mushroomCountText;
 
     // [SerializeField] private InputActionReference inputActionReference = null;
     private XRDirectInteractor interactor;
@@ -26,8 +26,8 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
+            + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
     }
 
     public void PickUp()
@@ -38,20 +38,28 @@ public class CountMushroom : MonoBehaviour
         {
 
             if (interactable.transform.CompareTag("RedMushroom")) {
-                countRedMushroom++;
+                redMushroomCount++;
                 interactable.transform.gameObject.SetActive(false); 
             }
 
             if (interactable.transform.CompareTag("BrownMushroom"))
             {
-                countBrownMushroom++;
+                brownMushroomCount++;
                 interactable.transform.gameObject.SetActive(false);
             }
         }
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
-
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
+            + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
 
     }
 
+    public int getRedMushroomCount()
+    {
+        return redMushroomCount;
+    }
+
+    public int getBrownMushroomCount()
+    {
+        return brownMushroomCount;
+    }
 }

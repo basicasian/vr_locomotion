@@ -28,4 +28,10 @@ public class CountCollision : MonoBehaviour
        
     }
 
+    public int getCollisionCount()
+    {
+        return count;
+    }
+
+
 }
