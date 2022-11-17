@@ -21,34 +21,35 @@ public class DataRecording : MonoBehaviour
     private CountMushroom countMushroom;
     private CountCollision countCollision;
 
-    public NavigationState navigationState; //navigation state
+    public NavigationState navigationState; // navigation state
+    public Procedure procedure; // procedure
+
+    Boolean createdCSV = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        DateTime dt = DateTime.Now;
-        string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
-
-        filename = Application.dataPath + "/DataRecording/" + dateString + ".csv";
-
-        // false = overwrite
-        tw = new StreamWriter(filename, false);
-        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; Navigation State");
-        tw.Close();
-
         countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
         countCollision = cameraGameObject.GetComponent<CountCollision>();
+        procedure = xrOriginGameObject.GetComponent<Procedure>();
     }
 
     // Update is called once per frame
     void Update()
     {
-         writeCSV();     
+        if (procedure.startGame)
+        {
+            writeCSV();
+        }
+       
     }
 
-    public void writeCSV()
+    private void writeCSV()
     {
-        
+        if (createdCSV)
+        {
+            createCSV();
+        }
         tw = new StreamWriter(filename, true);
 
         currentTime = currentTime + Time.deltaTime;
@@ -64,4 +65,21 @@ public class DataRecording : MonoBehaviour
         tw.Close();
         
     }
+
+    private void createCSV()
+    {
+        DateTime dt = DateTime.Now;
+        string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
+
+        filename = Application.dataPath + "/DataRecording/" + dateString + ".csv";
+
+        // false = overwrite
+        tw = new StreamWriter(filename, false);
+        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; Navigation State");
+        tw.Close();
+
+        createdCSV = true;
+    }
+
+
 }
