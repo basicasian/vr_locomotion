@@ -41,7 +41,7 @@ public class Procedure : MonoBehaviour
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
             {
                 startPosition = true;
-                gameText.text = "to start game press the trigger";
+                gameText.text = "to start game press the trackpad";
             }
             else
             {

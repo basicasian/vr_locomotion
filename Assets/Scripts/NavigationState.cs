@@ -22,6 +22,6 @@ public class NavigationState : MonoBehaviour
 
     public string navigationState()
     {
-        return "test";
+        return "nothing";
     }
 }

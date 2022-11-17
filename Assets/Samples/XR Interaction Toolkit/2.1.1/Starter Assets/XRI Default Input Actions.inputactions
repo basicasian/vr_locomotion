@@ -1450,7 +1450,7 @@
                 {
                     "name": "",
                     "id": "7bdbbcd5-4457-4c8b-a5b9-cbb20c957e88",
-                    "path": "<ViveController>{RightHand}/triggerPressed",
+                    "path": "<ViveController>/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1461,7 +1461,7 @@
                 {
                     "name": "",
                     "id": "1a6f17b8-2ef8-45c9-a23b-f1c4b5e74e0b",
-                    "path": "<ViveController>/triggerPressed",
+                    "path": "<ViveController>/trackpadClicked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
