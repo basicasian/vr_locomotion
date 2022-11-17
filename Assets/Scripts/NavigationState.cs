@@ -36,22 +36,23 @@ public class NavigationState : MonoBehaviour
         } else // everytime when the threshold reached
         {
             countdownTime = timeThreshold;
-           
             differenceLocation = previousLocation - cameraGameObject.transform.position;
+            previousLocation = cameraGameObject.transform.position;
 
+            /*
             Debug.Log("previous: " + previousLocation);
             Debug.Log("current: " + cameraGameObject.transform.position);
             Debug.Log("difference: " + differenceLocation);
             Debug.Log(Mathf.Abs(differenceLocation.x) + ", " + (Mathf.Abs(differenceLocation.y) + ", " + Mathf.Abs(differenceLocation.z)));
-
-            previousLocation = cameraGameObject.transform.position;
+            */
         }
 
         if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf)
         {
             currentState = "steering";
         }
-        else if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf)
+        // TODO: not sure how to access to teleportation trigger
+        else if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf) 
         {
             currentState = "teleportation";
         }
