@@ -24,7 +24,7 @@ public class CountCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (procedure.startGame)
+        if (procedure.playingGame)
         {
             if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
             {

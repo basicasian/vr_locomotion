@@ -10,7 +10,7 @@ public class Procedure : MonoBehaviour
 {
 
     public float countdownTime;
-    public Boolean startGame = false;
+    public Boolean playingGame = false;
     Boolean startPosition = false;
 
     public TextMeshProUGUI gameText;
@@ -35,7 +35,7 @@ public class Procedure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!startGame)
+        if (!playingGame)
         {
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
@@ -62,6 +62,7 @@ public class Procedure : MonoBehaviour
             if (countdownTime < 0)
             {
                 gameText.text = "time's up!";
+                playingGame = false;
 
                 rightHandGameObject.SetActive(false);
                 leftHandGameObject.SetActive(false);
@@ -84,11 +85,10 @@ public class Procedure : MonoBehaviour
     {
         if (startPosition)
         {
-            startGame = true;
+            playingGame = true;
             gameText.text = "";
 
         } 
-       
     }
 
 }

@@ -37,7 +37,8 @@ public class DataRecording : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (procedure.startGame)
+        // only records as long game is played
+        if (procedure.playingGame)
         {
             writeCSV();
         }
@@ -46,7 +47,7 @@ public class DataRecording : MonoBehaviour
 
     private void writeCSV()
     {
-        if (createdCSV)
+        if (!createdCSV)
         {
             createCSV();
         }

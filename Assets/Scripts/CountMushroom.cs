@@ -36,7 +36,7 @@ public class CountMushroom : MonoBehaviour
 
     public void PickUp()
     {
-        if (procedure.startGame)
+        if (procedure.playingGame)
         {
             interactor.GetValidTargets(grabInteractables);
 
