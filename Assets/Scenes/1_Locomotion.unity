@@ -3330,7 +3330,7 @@ MonoBehaviour:
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
   m_AllowAnchorControl: 1
-  m_UseForceGrab: 1
+  m_UseForceGrab: 0
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
@@ -12082,8 +12082,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1575796352}
   - component: {fileID: 1575796351}
+  - component: {fileID: 1575796353}
   m_Layer: 0
-  m_Name: CSV
+  m_Name: Data Recording
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12105,6 +12106,7 @@ MonoBehaviour:
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
+  navigationState: {fileID: 1575796353}
 --- !u!4 &1575796352
 Transform:
   m_ObjectHideFlags: 0
@@ -12120,6 +12122,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575796353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575796350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2334d17bdf3b834489db97979d0b62a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steeringReference: {fileID: 2290650948556951067, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  teleportationReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  xrOriginGameObject: {fileID: 783844406}
+  rightHandGameObject: {fileID: 1895453385}
+  cameraGameObject: {fileID: 153130379}
 --- !u!1001 &1582842267
 PrefabInstance:
   m_ObjectHideFlags: 0

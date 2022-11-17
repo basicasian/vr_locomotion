@@ -21,6 +21,8 @@ public class DataRecording : MonoBehaviour
     private CountMushroom countMushroom;
     private CountCollision countCollision;
 
+    public NavigationState navigationState; //navigation state
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,8 @@ public class DataRecording : MonoBehaviour
                    Time.frameCount + ";" + t.ToString(@"mm\:ss\:ff") + ";"
                 + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
                 + cameraGameObject.transform.position.x + ";" + cameraGameObject.transform.position.y + ";" + cameraGameObject.transform.position.z + ";"
-                + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z);
+                + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
+                + navigationState.getNavigationState());
 
         tw.Close();
         
