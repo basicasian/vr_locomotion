@@ -22,7 +22,7 @@ public class DataRecording : MonoBehaviour
     private CountCollision countCollision;
 
     public NavigationState navigationState; // navigation state
-    public Procedure procedure; // procedure
+    private Procedure procedure; // procedure
 
     Boolean createdCSV = false;
 

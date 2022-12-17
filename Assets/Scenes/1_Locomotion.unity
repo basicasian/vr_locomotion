@@ -5477,7 +5477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c506559e8b9b13448b6ff5465c2ffdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 120
+  countdownTime: 2
   playingGame: 0
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
@@ -12027,7 +12027,6 @@ MonoBehaviour:
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   navigationState: {fileID: 1575796353}
-  procedure: {fileID: 0}
 --- !u!4 &1575796352
 Transform:
   m_ObjectHideFlags: 0
@@ -12061,7 +12060,7 @@ MonoBehaviour:
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 1
-  distanceThreshold: 0.3
+  distanceThreshold: 0.5
 --- !u!1001 &1582842267
 PrefabInstance:
   m_ObjectHideFlags: 0

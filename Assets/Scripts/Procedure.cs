@@ -21,6 +21,8 @@ public class Procedure : MonoBehaviour
     public GameObject leftHandGameObject;
     public GameObject cameraGameObject;
 
+    public GameObject mushroomStumps;
+
     public BodyBasedSteering bodybasedScript;
         
     // Start is called before the first frame update
@@ -37,6 +39,8 @@ public class Procedure : MonoBehaviour
     {
         if (!playingGame)
         {
+            mushroomStumps.SetActive(false);
+
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
             {
@@ -51,6 +55,8 @@ public class Procedure : MonoBehaviour
         } 
         else 
         {
+            mushroomStumps.SetActive(true);
+
             if (countdownTime > 0)
             {
                 countdownTime -= Time.deltaTime;
