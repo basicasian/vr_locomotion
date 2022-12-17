@@ -61,6 +61,7 @@ public class DataRecording : MonoBehaviour
                 + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
                 + cameraGameObject.transform.position.x + ";" + cameraGameObject.transform.position.y + ";" + cameraGameObject.transform.position.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
+                + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
                 + navigationState.getNavigationState());
 
         tw.Close();
@@ -76,7 +77,10 @@ public class DataRecording : MonoBehaviour
 
         // false = overwrite
         tw = new StreamWriter(filename, false);
-        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; Navigation State");
+        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; " +
+            "RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; " +
+            "Rotation X; Rotation Y; Rotation Z; " +
+            "Navigation State");
         tw.Close();
 
         createdCSV = true;

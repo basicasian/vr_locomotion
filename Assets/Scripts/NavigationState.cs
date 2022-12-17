@@ -18,7 +18,7 @@ public class NavigationState : MonoBehaviour
     public float distanceThreshold = 0.3f;
     private float countdownTime;
 
-    private string currentState = "nothing";
+    private NavigationStateEnum currentState = NavigationStateEnum.N;
 
 
     // Start is called before the first frame update
@@ -47,28 +47,62 @@ public class NavigationState : MonoBehaviour
             */
         }
 
+        if (((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold)) &&
+              steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+        {
+            currentState = NavigationStateEnum.WST;
+            return;
+        }
+
+        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf))
+        {
+            currentState = NavigationStateEnum.WS;
+            return;
+        }
+        if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+        {
+            currentState = NavigationStateEnum.ST;
+            return;
+        }
+
+
         if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf)
         {
-            currentState = "steering";
+            currentState = NavigationStateEnum.S;
+            return;
         }
         // TODO: not sure how to access to teleportation trigger
-        else if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf) 
+        if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf) 
         {
-            currentState = "teleportation";
+            currentState = NavigationStateEnum.T;
+            return;
         }
-        else if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
+        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
         {
-            currentState = "walking";
+            currentState = NavigationStateEnum.W;
+            return;
         }
-        else
-        {
-            currentState = "nothing";
-        }
-       
+
+        currentState = NavigationStateEnum.N;
+        return;
+
+
     }
 
     public string getNavigationState()
     {
-        return currentState;
+        return currentState.ToString();
     }
+
+}
+
+enum NavigationStateEnum
+{ 
+    N,
+    S,
+    T,
+    W,
+    WS,
+    ST,
+    WST
 }
