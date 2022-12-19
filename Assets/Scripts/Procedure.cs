@@ -24,7 +24,8 @@ public class Procedure : MonoBehaviour
     public GameObject mushroomStumps;
 
     public BodyBasedSteering bodybasedScript;
-        
+    public GenerateMushroom generateMushroom; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,8 +54,8 @@ public class Procedure : MonoBehaviour
                 gameText.text = "please go to the yellow mark of the play area";
             }
         } 
-        else 
-        {
+        else
+        {         
             mushroomStumps.SetActive(true);
 
             if (countdownTime > 0)

@@ -72,4 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Ignore Data Recordings
-# /[Aa]ssets/DataRecording*
+/[Aa]ssets/DataRecording/*
