@@ -52,7 +52,7 @@ public class GenerateMushroom : MonoBehaviour
             Debug.Log("position: " + randomPosition);
 
             // check if there are other objects
-            var hitColliders = Physics.OverlapSphere(randomPosition, 0.5f); // second parameter is radius
+            var hitColliders = Physics.OverlapSphere(randomPosition, 2); // second parameter is radius
 
             if (hitColliders.Length == 1) // for some reason there is always 1 (maybe plane)
             {

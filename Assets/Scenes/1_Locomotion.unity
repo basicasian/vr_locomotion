@@ -1764,7 +1764,7 @@ Transform:
   - {fileID: 832378031}
   - {fileID: 654521070}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &294589806
 MonoBehaviour:
@@ -2291,7 +2291,7 @@ RectTransform:
   - {fileID: 710104429}
   - {fileID: 162033130}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2527,7 +2527,7 @@ Transform:
   - {fileID: 156511931}
   - {fileID: 1528459292}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &423394849 stripped
 Transform:
@@ -5240,7 +5240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 696439828}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Gen Mushroom Stumps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5261,7 +5261,7 @@ Transform:
   - {fileID: 568046857}
   - {fileID: 640809198}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &710104429 stripped
 Transform:
@@ -5616,8 +5616,8 @@ MonoBehaviour:
   redMushroomStumpPreFab: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
   brownMushroomStumpParent: {fileID: 640809197}
   brownMushroomStumpPreFab: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
-  distanceX: 20
-  distanceZ: 20
+  distanceX: 25
+  distanceZ: 25
   redMushrooms: 10
   brownMushrooms: 10
 --- !u!1001 &789982178
@@ -7306,7 +7306,7 @@ Transform:
   - {fileID: 1356606853}
   - {fileID: 114744559}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980376912
 PrefabInstance:
@@ -7690,7 +7690,7 @@ Transform:
   - {fileID: 942277075}
   - {fileID: 1910915388}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1010205061
 PrefabInstance:
@@ -7846,7 +7846,7 @@ Transform:
   - {fileID: 1573829317}
   - {fileID: 1226786913}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1023446274 stripped
 Transform:
@@ -7948,7 +7948,7 @@ Transform:
   - {fileID: 1630746130}
   - {fileID: 1309785735}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1029061545
 PrefabInstance:
@@ -8330,7 +8330,7 @@ Transform:
   - {fileID: 1391152273}
   - {fileID: 2091774889}
   m_Father: {fileID: 1482106333}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1064214407
 PrefabInstance:
@@ -11640,6 +11640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 696439828}
   - {fileID: 1023060337}
   - {fileID: 422405941}
   - {fileID: 1007966634}
@@ -11648,7 +11649,6 @@ Transform:
   - {fileID: 1060100473}
   - {fileID: 368120548}
   - {fileID: 973960215}
-  - {fileID: 696439828}
   m_Father: {fileID: 133591043}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
