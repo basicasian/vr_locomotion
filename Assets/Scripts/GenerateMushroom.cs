@@ -20,19 +20,9 @@ public class GenerateMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
-
         generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
         generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);
 
-        Debug.Log("done");
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private float nextFloat(Random rnd, double minValue, double maxValue)
@@ -49,7 +39,7 @@ public class GenerateMushroom : MonoBehaviour
             float randomX = nextFloat(rand, -distanceX, distanceX);
             float randomZ = nextFloat(rand, -distanceZ, distanceZ);
             Vector3 randomPosition = new Vector3(randomX, 0, randomZ);
-            Debug.Log("position: " + randomPosition);
+            // Debug.Log("position: " + randomPosition);
 
             // check if there are other objects
             var hitColliders = Physics.OverlapSphere(randomPosition, 2); // second parameter is radius
@@ -58,10 +48,22 @@ public class GenerateMushroom : MonoBehaviour
             {
                 var mushroomClone = Instantiate(prefab, randomPosition, Quaternion.identity);
                 mushroomClone.transform.SetParent(parent.transform);
-                Debug.Log("Success!");
+                // Debug.Log("Success!");
                 counter--;
             }
         }
+    }
+
+    public void regenerateMushrooms()
+    {
+        foreach (Transform child in redMushroomStumpPreFab.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
+        generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);
+
     }
 
 
