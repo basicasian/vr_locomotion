@@ -17,6 +17,8 @@ public class CountMushroom : MonoBehaviour
     private Procedure procedure;
 
     private XRDirectInteractor interactor;
+    private GenerateMushroom generateMushroom;
+
 
     List<IXRInteractable> grabInteractables = new List<IXRInteractable>();
 
@@ -28,10 +30,13 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
-
         procedure = xrOriginGameObject.GetComponent<Procedure>();
+        generateMushroom = xrOriginGameObject.GetComponent<GenerateMushroom>();
+
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
+          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+
+
     }
 
     public void PickUp()
@@ -55,8 +60,8 @@ public class CountMushroom : MonoBehaviour
                     interactable.transform.gameObject.SetActive(false);
                 }
             }
-            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + "/8 \n"
-                + "Brown Mushrooms: " + brownMushroomCount.ToString() + "/10";
+            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
 
         }
     }

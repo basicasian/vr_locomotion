@@ -23,7 +23,7 @@ public class GenerateMushroom : MonoBehaviour
         Debug.Log("start");
 
         generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
-        generateMushrooms(brownMushrooms, brownMushroomStumpParent, redMushroomStumpPreFab);
+        generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);
 
         Debug.Log("done");
 
@@ -63,4 +63,6 @@ public class GenerateMushroom : MonoBehaviour
             }
         }
     }
+
+
 }

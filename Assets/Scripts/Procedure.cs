@@ -24,7 +24,6 @@ public class Procedure : MonoBehaviour
     public GameObject mushroomStumps;
 
     public BodyBasedSteering bodybasedScript;
-    public GenerateMushroom generateMushroom; 
 
     // Start is called before the first frame update
     void Start()

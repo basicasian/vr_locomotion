@@ -7825,7 +7825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1023060337}
   m_Layer: 0
-  m_Name: Mushroom Stumps
+  m_Name: Fixed Mushroom Stumps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
