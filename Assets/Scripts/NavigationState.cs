@@ -65,6 +65,12 @@ public class NavigationState : MonoBehaviour
             return;
         }
 
+        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+        {
+            currentState = NavigationStateEnum.WT;
+            return;
+        }
+
 
         if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf)
         {
@@ -104,5 +110,6 @@ enum NavigationStateEnum
     W,
     WS,
     ST,
+    WT,
     WST
 }

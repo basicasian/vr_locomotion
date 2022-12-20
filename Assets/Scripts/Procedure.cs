@@ -11,6 +11,8 @@ public class Procedure : MonoBehaviour
 
     public float timelimit;
     private float countdown;
+
+    // TODO: change it to private
     public Boolean playingGame = false;
     public Boolean restartedGame = false;
 
