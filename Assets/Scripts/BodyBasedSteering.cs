@@ -33,4 +33,9 @@ public class BodyBasedSteering : MonoBehaviour
         isActive = value;
     }
 
+    public bool getActive()
+    {
+        return isActive;
+    }
+
 }

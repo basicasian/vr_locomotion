@@ -8,13 +8,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(XRDirectInteractor))]
 public class CountMushroom : MonoBehaviour
 {
-    private int countRedMushroom = 0;
-    private int countBrownMushroom = 0;
+    public int redMushroomCount = 0;
+    public int brownMushroomCount = 0;
 
-    public TextMeshProUGUI countMushroomText;
+    public TextMeshProUGUI mushroomCountText;
 
-    // [SerializeField] private InputActionReference inputActionReference = null;
+    public GameObject xrOriginGameObject;
+    private Procedure procedure;
+
     private XRDirectInteractor interactor;
+    private GenerateMushroom generateMushroom;
+
 
     List<IXRInteractable> grabInteractables = new List<IXRInteractable>();
 
@@ -26,32 +30,40 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
+        procedure = xrOriginGameObject.GetComponent<Procedure>();
+        generateMushroom = xrOriginGameObject.GetComponent<GenerateMushroom>();
+
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
+          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+
+
     }
 
     public void PickUp()
     {
-        interactor.GetValidTargets(grabInteractables);
-
-        foreach (var interactable in grabInteractables)
+        if (procedure.playingGame)
         {
+            interactor.GetValidTargets(grabInteractables);
 
-            if (interactable.transform.CompareTag("RedMushroom")) {
-                countRedMushroom++;
-                interactable.transform.gameObject.SetActive(false); 
-            }
-
-            if (interactable.transform.CompareTag("BrownMushroom"))
+            foreach (var interactable in grabInteractables)
             {
-                countBrownMushroom++;
-                interactable.transform.gameObject.SetActive(false);
+
+                if (interactable.transform.CompareTag("RedMushroom"))
+                {
+                    redMushroomCount++;
+                    interactable.transform.gameObject.SetActive(false);
+                }
+
+                if (interactable.transform.CompareTag("BrownMushroom"))
+                {
+                    brownMushroomCount++;
+                    interactable.transform.gameObject.SetActive(false);
+                }
             }
+            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+
         }
-        countMushroomText.text = "Red Mushrooms: " + countRedMushroom.ToString() + "/8 \n"
-            + "Brown Mushrooms: " + countBrownMushroom.ToString() + "/10";
-
-
     }
 
 }

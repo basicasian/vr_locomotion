@@ -9,8 +9,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Procedure : MonoBehaviour
 {
 
-    public float countdownTime;
-    Boolean startGame = false;
+    public float timelimit;
+    private float countdown;
+    public Boolean playingGame = false;
+    public Boolean restartedGame = false;
+
     Boolean startPosition = false;
 
     public TextMeshProUGUI gameText;
@@ -20,27 +23,38 @@ public class Procedure : MonoBehaviour
     public GameObject rightHandGameObject;
     public GameObject leftHandGameObject;
     public GameObject cameraGameObject;
+    public GameObject mushroomStumps;
 
     public BodyBasedSteering bodybasedScript;
-        
+    public GenerateMushroom generateMushroom;
+    public CountCollision countCollision;
+    public CountMushroom countMushroom;
+
     // Start is called before the first frame update
     void Start()
     {
-        TimeSpan t = TimeSpan.FromSeconds(countdownTime);
+        TimeSpan t = TimeSpan.FromSeconds(timelimit);
         timerText.text = t.ToString(@"mm\:ss");
         gameText.text = "please go to the yellow mark of the play area";
+
+        countdown = timelimit;
+
+        countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
+        countCollision = cameraGameObject.GetComponent<CountCollision>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!startGame)
+        if (!playingGame && countdown >= 0)
         {
+            mushroomStumps.SetActive(false);
+
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
             {
                 startPosition = true;
-                gameText.text = "to start game press the trigger";
+                gameText.text = "to start game press the trackpad";
             }
             else
             {
@@ -48,24 +62,34 @@ public class Procedure : MonoBehaviour
                 gameText.text = "please go to the yellow mark of the play area";
             }
         } 
-        else 
-        {
-            if (countdownTime > 0)
+        else
+        {         
+            mushroomStumps.SetActive(true);
+
+            if (countdown > 0)
             {
-                countdownTime -= Time.deltaTime;
+                countdown -= Time.deltaTime;
             }
 
-            TimeSpan t = TimeSpan.FromSeconds(countdownTime);
+            TimeSpan t = TimeSpan.FromSeconds(countdown);
             timerText.text = t.ToString(@"mm\:ss");
 
-            if (countdownTime < 0)
+            if (countdown < 0)
             {
                 gameText.text = "time's up!";
+                playingGame = false;
 
                 rightHandGameObject.SetActive(false);
                 leftHandGameObject.SetActive(false);
 
                 bodybasedScript.SetActive(false);
+
+                // restart game on space
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("Restart!");
+                    RestartGame();
+                }
             }
         } 
     }
@@ -83,11 +107,21 @@ public class Procedure : MonoBehaviour
     {
         if (startPosition)
         {
-            startGame = true;
+            playingGame = true;
             gameText.text = "";
 
         } 
-       
+    }
+
+    private void RestartGame()
+    {
+        countdown = timelimit;
+        countCollision.collisionCount = 0;
+        countMushroom.redMushroomCount = 0;
+        countMushroom.brownMushroomCount = 0;
+
+        generateMushroom.regenerateMushrooms();
+
     }
 
 }
