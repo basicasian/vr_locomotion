@@ -9631,6 +9631,7 @@ MonoBehaviour:
   leftHandGameObject: {fileID: 477947725}
   cameraGameObject: {fileID: 153130379}
   mushroomStumpsGameObject: {fileID: 696439827}
+  dataRecordingGameObject: {fileID: 1575796350}
 --- !u!1 &1187288967
 GameObject:
   m_ObjectHideFlags: 0
@@ -12201,7 +12202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575796350}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56989511c6764e4d98b118cc8ed8ed9, type: 3}
   m_Name: 
@@ -12209,6 +12210,7 @@ MonoBehaviour:
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
+  procedureGameObject: {fileID: 1177830791}
   navigationState: {fileID: 1575796353}
 --- !u!4 &1575796352
 Transform:
@@ -12232,7 +12234,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575796350}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2334d17bdf3b834489db97979d0b62a7, type: 3}
   m_Name: 

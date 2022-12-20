@@ -24,11 +24,13 @@ public class Procedure : MonoBehaviour
     public GameObject leftHandGameObject;
     public GameObject cameraGameObject;
     public GameObject mushroomStumpsGameObject;
+    public GameObject dataRecordingGameObject;
 
     private BodyBasedSteering bodybasedSteeringScript;
     private GenerateMushroom generateMushroomScript;
     private CountCollision countCollisionScript;
     private CountMushroom countMushroomScript;
+    private DataRecording dataRecordingScript;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,7 @@ public class Procedure : MonoBehaviour
         countMushroomScript = rightHandGameObject.GetComponent<CountMushroom>();
         countCollisionScript = cameraGameObject.GetComponent<CountCollision>();
         generateMushroomScript = GetComponent<GenerateMushroom>();
-
+        dataRecordingScript = dataRecordingGameObject.GetComponent<DataRecording>();
     }
 
     // Update is called once per frame
@@ -146,6 +148,7 @@ public class Procedure : MonoBehaviour
         generateMushroomScript.regenerateMushrooms();
         countCollisionScript.resetCount();
         countMushroomScript.resetCount();
+        dataRecordingScript.setCreatedCSV(false);
     }
 
     public Boolean getPlayingGame()

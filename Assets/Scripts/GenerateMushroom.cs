@@ -35,7 +35,6 @@ public class GenerateMushroom : MonoBehaviour
     {
         while (counter != 0)
         {
-
             // create random positions
             float randomX = nextFloat(rand, -distanceX, distanceX);
             float randomZ = nextFloat(rand, -distanceZ, distanceZ);
@@ -57,16 +56,21 @@ public class GenerateMushroom : MonoBehaviour
 
     public void regenerateMushrooms()
     {
-        /*
-        foreach (Transform child in redMushroomStumpPreFab.transform)
+        
+        foreach (Transform child in redMushroomStumpParent.transform)
         {
             // TODO: check if this is the right way
-            GameObject.DestroyImmediate(child.gameObject, true);
-        }*/
-
+            GameObject.Destroy(child.gameObject);
+        }
+        foreach (Transform child in brownMushroomStumpParent.transform)
+        {
+            // TODO: check if this is the right way
+            GameObject.Destroy(child.gameObject);
+        }
         generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
         generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);
 
+    
     }
 
 

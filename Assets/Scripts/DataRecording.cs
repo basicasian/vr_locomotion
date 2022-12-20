@@ -21,6 +21,7 @@ public class DataRecording : MonoBehaviour
     private CountMushroom countMushroom;
     private CountCollision countCollision;
 
+    public GameObject procedureGameObject;
     public NavigationState navigationState; // navigation state
     private Procedure procedure; // procedure
 
@@ -31,7 +32,7 @@ public class DataRecording : MonoBehaviour
     {
         countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
         countCollision = cameraGameObject.GetComponent<CountCollision>();
-        procedure = xrOriginGameObject.GetComponent<Procedure>();
+        procedure = procedureGameObject.GetComponent<Procedure>();
     }
 
     // Update is called once per frame
@@ -84,6 +85,11 @@ public class DataRecording : MonoBehaviour
         tw.Close();
 
         createdCSV = true;
+    }
+
+    public void setCreatedCSV(Boolean value)
+    {
+        createdCSV = value;
     }
 
 
