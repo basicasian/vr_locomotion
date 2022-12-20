@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionCount: 0
   countText: {fileID: 512421985}
-  xrOriginGameObject: {fileID: 783844406}
+  procedureGameObject: {fileID: 1177830791}
 --- !u!1001 &156511930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4641,6 +4641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!1 &654521066
@@ -5095,6 +5099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!4 &689625197 stripped
@@ -5503,9 +5511,7 @@ GameObject:
   - component: {fileID: 783844407}
   - component: {fileID: 783844408}
   - component: {fileID: 783844410}
-  - component: {fileID: 783844412}
   - component: {fileID: 783844413}
-  - component: {fileID: 783844414}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -5561,32 +5567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &783844412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783844406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c506559e8b9b13448b6ff5465c2ffdb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timelimit: 120
-  playingGame: 0
-  restartedGame: 0
-  gameText: {fileID: 898624086}
-  timerText: {fileID: 2072914073}
-  startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightHandGameObject: {fileID: 1895453385}
-  leftHandGameObject: {fileID: 477947725}
-  cameraGameObject: {fileID: 153130379}
-  mushroomStumps: {fileID: 696439827}
-  bodybasedScript: {fileID: 783844413}
-  generateMushroom: {fileID: 0}
-  countCollision: {fileID: 0}
-  countMushroom: {fileID: 0}
 --- !u!114 &783844413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5603,26 +5583,6 @@ MonoBehaviour:
   mainCamera: {fileID: 153130384}
   xrOrigin: {fileID: 783844408}
   speed: 2
---- !u!114 &783844414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783844406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d58a6b67f0ac78449bb6e17a35a1da1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redMushroomStumpParent: {fileID: 568046856}
-  redMushroomStumpPreFab: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
-  brownMushroomStumpParent: {fileID: 640809197}
-  brownMushroomStumpPreFab: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
-  distanceX: 25
-  distanceZ: 25
-  redMushrooms: 10
-  brownMushrooms: 10
 --- !u!1001 &789982178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7656,6 +7616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!1 &1007966633
@@ -8112,6 +8076,10 @@ PrefabInstance:
     - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_Name
       value: MushroomStumpBrown (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
@@ -8668,6 +8636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
 --- !u!4 &1085789955 stripped
@@ -8738,6 +8710,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
@@ -8930,6 +8906,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
@@ -9577,6 +9557,80 @@ Transform:
   m_Father: {fileID: 1145708642}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1177830791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177830792}
+  - component: {fileID: 1177830794}
+  - component: {fileID: 1177830793}
+  m_Layer: 0
+  m_Name: Procedure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177830792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177830791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.802613, y: -8.157671, z: 2.8342524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177830793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177830791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58a6b67f0ac78449bb6e17a35a1da1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redMushroomStumpParent: {fileID: 568046856}
+  redMushroomStumpPreFab: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+  brownMushroomStumpParent: {fileID: 640809197}
+  brownMushroomStumpPreFab: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+  distanceX: 3
+  distanceZ: 3
+  redMushrooms: 1
+  brownMushrooms: 1
+--- !u!114 &1177830794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177830791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c506559e8b9b13448b6ff5465c2ffdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelimit: 120
+  gameText: {fileID: 898624086}
+  timerText: {fileID: 2072914073}
+  startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  xrOriginGameObject: {fileID: 783844406}
+  rightHandGameObject: {fileID: 1895453385}
+  leftHandGameObject: {fileID: 477947725}
+  cameraGameObject: {fileID: 153130379}
+  mushroomStumpsGameObject: {fileID: 696439827}
 --- !u!1 &1187288967
 GameObject:
   m_ObjectHideFlags: 0
@@ -10657,6 +10711,10 @@ PrefabInstance:
     - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_Name
       value: MushroomStumpBrown (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
@@ -11862,6 +11920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!1001 &1547063716
@@ -12101,8 +12163,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1822762956}
   - {fileID: 1937466661}
+  - {fileID: 1822762956}
   - {fileID: 689625197}
   - {fileID: 1930855386}
   - {fileID: 1467949359}
@@ -12139,12 +12201,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575796350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56989511c6764e4d98b118cc8ed8ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: test
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
@@ -12171,7 +12232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575796350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2334d17bdf3b834489db97979d0b62a7, type: 3}
   m_Name: 
@@ -13181,6 +13242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!1001 &1799543618
@@ -13769,7 +13834,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 334418498936547309, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 334418498936547309, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13822,6 +13887,10 @@ PrefabInstance:
     - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_Name
       value: MushroomStumpBrown
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
@@ -13888,6 +13957,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
@@ -14110,6 +14183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomStumpBrown (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
 --- !u!1001 &1882335449
@@ -14170,6 +14247,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
@@ -14563,7 +14644,7 @@ MonoBehaviour:
   redMushroomCount: 0
   brownMushroomCount: 0
   mushroomCountText: {fileID: 544451233}
-  xrOriginGameObject: {fileID: 783844406}
+  procedureGameObject: {fileID: 1177830791}
 --- !u!4 &1900103802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
@@ -14816,7 +14897,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 334418498936547309, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 334418498936547309, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15121,6 +15202,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
@@ -16642,6 +16727,10 @@ PrefabInstance:
     - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
       propertyPath: m_Name
       value: MushroomStumpRed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}

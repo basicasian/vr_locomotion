@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 using TMPro;
 
-// has to be attached to main camera because of the capsule collider 
+// IMPORTANT: has to be attached to main camera because of the capsule collider 
 public class CountCollision : MonoBehaviour
 {
     public int collisionCount = 0;
     public TextMeshProUGUI countText;
 
-    public GameObject xrOriginGameObject;
+    public GameObject procedureGameObject;
     private Procedure procedure;
 
     // Start is called before the first frame update
@@ -19,12 +19,12 @@ public class CountCollision : MonoBehaviour
     {
         countText.text = "Collisions: " + collisionCount.ToString();
 
-        procedure = xrOriginGameObject.GetComponent<Procedure>();
+        procedure = procedureGameObject.GetComponent<Procedure>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (procedure.playingGame)
+        if (procedure.getPlayingGame())
         {
             if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
             {
@@ -35,5 +35,9 @@ public class CountCollision : MonoBehaviour
        
     }
 
+    public void resetCount()
+    {
+        collisionCount = 0;
+    }
 
 }

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
+// IMPORTANT: check if it has to be attached to the hand
 [RequireComponent(typeof(XRDirectInteractor))]
 public class CountMushroom : MonoBehaviour
 {
@@ -13,12 +14,11 @@ public class CountMushroom : MonoBehaviour
 
     public TextMeshProUGUI mushroomCountText;
 
-    public GameObject xrOriginGameObject;
+    public GameObject procedureGameObject;
     private Procedure procedure;
-
-    private XRDirectInteractor interactor;
     private GenerateMushroom generateMushroom;
 
+    private XRDirectInteractor interactor;
 
     List<IXRInteractable> grabInteractables = new List<IXRInteractable>();
 
@@ -30,18 +30,16 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        procedure = xrOriginGameObject.GetComponent<Procedure>();
-        generateMushroom = xrOriginGameObject.GetComponent<GenerateMushroom>();
+        procedure = procedureGameObject.GetComponent<Procedure>();
+        generateMushroom = procedureGameObject.GetComponent<GenerateMushroom>();
 
         mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
           + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
-
-
     }
 
     public void PickUp()
     {
-        if (procedure.playingGame)
+        if (procedure.getPlayingGame())
         {
             interactor.GetValidTargets(grabInteractables);
 
@@ -65,5 +63,12 @@ public class CountMushroom : MonoBehaviour
 
         }
     }
+
+    public void resetCount()
+    {
+        redMushroomCount = 0;
+        brownMushroomCount = 0;
+    }
+
 
 }

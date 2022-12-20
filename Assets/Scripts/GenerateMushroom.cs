@@ -10,11 +10,12 @@ public class GenerateMushroom : MonoBehaviour
     public GameObject brownMushroomStumpParent;
     public GameObject brownMushroomStumpPreFab;
 
+    // IMPORTANT! do not set too small or else while condition will never end
     public int distanceX;
     public int distanceZ;
 
-    public int redMushrooms;
-    public int brownMushrooms;
+    public int redMushrooms = 0;
+    public int brownMushrooms = 0;
     private Random rand = new Random();
 
     // Start is called before the first frame update
@@ -56,10 +57,12 @@ public class GenerateMushroom : MonoBehaviour
 
     public void regenerateMushrooms()
     {
+        /*
         foreach (Transform child in redMushroomStumpPreFab.transform)
         {
-            GameObject.Destroy(child.gameObject);
-        }
+            // TODO: check if this is the right way
+            GameObject.DestroyImmediate(child.gameObject, true);
+        }*/
 
         generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
         generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);

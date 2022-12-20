@@ -11,26 +11,24 @@ public class Procedure : MonoBehaviour
 
     public float timelimit;
     private float countdown;
-
-    // TODO: change it to private
-    public Boolean playingGame = false;
-    public Boolean restartedGame = false;
-
-    Boolean startPosition = false;
+    private Boolean playingGame = false;
+    private Boolean gameDone = false;
+    private Boolean startPosition = false;
 
     public TextMeshProUGUI gameText;
     public TextMeshProUGUI timerText;
     public InputActionReference startGameReference = null;
 
+    public GameObject xrOriginGameObject;
     public GameObject rightHandGameObject;
     public GameObject leftHandGameObject;
     public GameObject cameraGameObject;
-    public GameObject mushroomStumps;
+    public GameObject mushroomStumpsGameObject;
 
-    public BodyBasedSteering bodybasedScript;
-    public GenerateMushroom generateMushroom;
-    public CountCollision countCollision;
-    public CountMushroom countMushroom;
+    private BodyBasedSteering bodybasedSteeringScript;
+    private GenerateMushroom generateMushroomScript;
+    private CountCollision countCollisionScript;
+    private CountMushroom countMushroomScript;
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +39,20 @@ public class Procedure : MonoBehaviour
 
         countdown = timelimit;
 
-        countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
-        countCollision = cameraGameObject.GetComponent<CountCollision>();
+        bodybasedSteeringScript = xrOriginGameObject.GetComponent<BodyBasedSteering>();
+        countMushroomScript = rightHandGameObject.GetComponent<CountMushroom>();
+        countCollisionScript = cameraGameObject.GetComponent<CountCollision>();
+        generateMushroomScript = GetComponent<GenerateMushroom>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playingGame && countdown >= 0)
+        // before the game
+        if (!playingGame && countdown >= 0 && !gameDone)
         {
-            mushroomStumps.SetActive(false);
+            mushroomStumpsGameObject.SetActive(false);
 
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
@@ -65,34 +67,32 @@ public class Procedure : MonoBehaviour
             }
         } 
         else
-        {         
-            mushroomStumps.SetActive(true);
+        {
+            // during game
+            mushroomStumpsGameObject.SetActive(true);
 
-            if (countdown > 0)
+            if (countdown > 0 && !gameDone)
             {
                 countdown -= Time.deltaTime;
+                TimeSpan t = TimeSpan.FromSeconds(countdown);
+                timerText.text = t.ToString(@"mm\:ss");
             }
 
-            TimeSpan t = TimeSpan.FromSeconds(countdown);
-            timerText.text = t.ToString(@"mm\:ss");
+            // win condition
+            if (countMushroomScript.redMushroomCount == generateMushroomScript.redMushrooms && countMushroomScript.brownMushroomCount == generateMushroomScript.brownMushrooms)
+            {
+                gameText.text = "good job! \n all mushrooms found!";
+                gameFinished();
+               
+            }
 
+            // lose condition 
             if (countdown < 0)
             {
                 gameText.text = "time's up!";
-                playingGame = false;
-
-                rightHandGameObject.SetActive(false);
-                leftHandGameObject.SetActive(false);
-
-                bodybasedScript.SetActive(false);
-
-                // restart game on space
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Debug.Log("Restart!");
-                    RestartGame();
-                }
+                gameFinished();
             }
+
         } 
     }
 
@@ -114,16 +114,44 @@ public class Procedure : MonoBehaviour
 
         } 
     }
+    private void gameFinished()
+    {
+        playingGame = false;
+        gameDone = true;
+
+        rightHandGameObject.SetActive(false);
+        leftHandGameObject.SetActive(false);
+        bodybasedSteeringScript.SetActive(false);
+
+        // restart game on space
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Restart!");
+            RestartGame();
+        }
+    }
 
     private void RestartGame()
     {
+        gameDone = false;
+
         countdown = timelimit;
-        countCollision.collisionCount = 0;
-        countMushroom.redMushroomCount = 0;
-        countMushroom.brownMushroomCount = 0;
+        countCollisionScript.collisionCount = 0;
+        countMushroomScript.redMushroomCount = 0;
+        countMushroomScript.brownMushroomCount = 0;
 
-        generateMushroom.regenerateMushrooms();
+        rightHandGameObject.SetActive(true);
+        leftHandGameObject.SetActive(true);
+        bodybasedSteeringScript.SetActive(true);
 
+        generateMushroomScript.regenerateMushrooms();
+        countCollisionScript.resetCount();
+        countMushroomScript.resetCount();
+    }
+
+    public Boolean getPlayingGame()
+    {
+        return playingGame;
     }
 
 }

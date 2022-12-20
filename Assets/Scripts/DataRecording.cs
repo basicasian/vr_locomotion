@@ -6,7 +6,7 @@ using System;
 
 public class DataRecording : MonoBehaviour
 {
-    public string filename = "";
+    private string filename = "";
 
     private int redMushroomCount;
     private int brownMushroomCount;
@@ -38,7 +38,7 @@ public class DataRecording : MonoBehaviour
     void Update()
     {
         // only records as long game is played
-        if (procedure.playingGame)
+        if (procedure.getPlayingGame())
         {
             writeCSV();
         }
