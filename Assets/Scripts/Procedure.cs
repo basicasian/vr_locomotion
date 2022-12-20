@@ -33,10 +33,6 @@ public class Procedure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TimeSpan t = TimeSpan.FromSeconds(timelimit);
-        timerText.text = t.ToString(@"mm\:ss");
-        gameText.text = "please go to the yellow mark of the play area";
-
         countdown = timelimit;
 
         bodybasedSteeringScript = xrOriginGameObject.GetComponent<BodyBasedSteering>();
@@ -63,6 +59,9 @@ public class Procedure : MonoBehaviour
             else
             {
                 startPosition = false;
+                TimeSpan t = TimeSpan.FromSeconds(timelimit);
+                timerText.text = t.ToString(@"mm\:ss");
+
                 gameText.text = "please go to the yellow mark of the play area";
             }
         } 
@@ -152,6 +151,11 @@ public class Procedure : MonoBehaviour
     public Boolean getPlayingGame()
     {
         return playingGame;
+    }
+
+    public Boolean getGameDone()
+    {
+        return gameDone;
     }
 
 }

@@ -32,12 +32,12 @@ public class CountCollision : MonoBehaviour
                 countText.text = "Collisions: " + collisionCount.ToString();
             }
         }
-       
     }
 
     public void resetCount()
     {
         collisionCount = 0;
+        countText.text = "Collisions: " + collisionCount.ToString();
     }
 
 }

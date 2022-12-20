@@ -68,6 +68,9 @@ public class CountMushroom : MonoBehaviour
     {
         redMushroomCount = 0;
         brownMushroomCount = 0;
+
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
     }
 
 
