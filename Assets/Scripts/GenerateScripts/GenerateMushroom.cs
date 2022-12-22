@@ -70,7 +70,6 @@ public class GenerateMushroom : MonoBehaviour
         generateMushrooms(redMushrooms, redMushroomStumpParent, redMushroomStumpPreFab);
         generateMushrooms(brownMushrooms, brownMushroomStumpParent, brownMushroomStumpPreFab);
 
-    
     }
 
 

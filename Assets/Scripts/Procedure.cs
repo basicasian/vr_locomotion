@@ -50,7 +50,7 @@ public class Procedure : MonoBehaviour
         // before the game
         if (!playingGame && countdown >= 0 && !gameDone)
         {
-            mushroomStumpsGameObject.SetActive(false);
+            // mushroomStumpsGameObject.SetActive(false);
 
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
@@ -145,10 +145,11 @@ public class Procedure : MonoBehaviour
         leftHandGameObject.SetActive(true);
         bodybasedSteeringScript.SetActive(true);
 
-        generateMushroomScript.regenerateMushrooms();
         countCollisionScript.resetCount();
         countMushroomScript.resetCount();
         dataRecordingScript.setCreatedCSV(false);
+
+        generateMushroomScript.regenerateMushrooms();
     }
 
     public Boolean getPlayingGame()
