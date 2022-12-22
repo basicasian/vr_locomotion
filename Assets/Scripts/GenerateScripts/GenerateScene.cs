@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class GeneratePrefabs : MonoBehaviour
+public class GenerateScene : MonoBehaviour
 {
     // IMPORTANT! do not set too small or else while condition will never end
     public int distanceX;
@@ -89,6 +89,7 @@ public class GeneratePrefabs : MonoBehaviour
         generatePrefab(brownMushroom, brownMushroomParent, brownMushroomPreFab);
     }
 
+    
     private float nextFloat(Random rnd, double minValue, double maxValue)
     {
         return (float)( rnd.NextDouble() * (maxValue - minValue) + minValue);
@@ -101,8 +102,14 @@ public class GeneratePrefabs : MonoBehaviour
         while (numberPrefabs != 0)
         {
             // create random positions
+
             float randomPosX = nextFloat(rand, -distanceX, distanceX);
             float randomPosZ = nextFloat(rand, -distanceZ, distanceZ);
+            if (prefab == redMushroomPreFab || prefab == brownMushroomPreFab)
+            {
+                randomPosX = nextFloat(rand, -4, 4);
+                randomPosZ = nextFloat(rand, -4, 4);
+            }
             Vector3 randomPosition = new Vector3(randomPosX, 0, randomPosZ);
 
             // create random roations
@@ -110,32 +117,55 @@ public class GeneratePrefabs : MonoBehaviour
             Vector3 randomRotation = new Vector3(0, randomRotY, 0);
 
             // check if there are other objects
-            var hitColliders = Physics.OverlapSphere(randomPosition, 2.5f); // second parameter is radius
+            var hitColliders = Physics.OverlapSphere(randomPosition, 2); // second parameter is radius
 
             breakCouter++;
             if (hitColliders.Length == 1) // for some reason there is always 1 (maybe plane)
             {
                 var clone = Instantiate(prefab, randomPosition, Quaternion.Euler(randomRotation));
                 clone.transform.SetParent(parent.transform);
-                // Debug.Log("Success!");
                 numberPrefabs--;
             }
 
-            if (breakCouter == 500)
+            if (breakCouter == 5000)
             {
+                Debug.Log(prefab.name + ": " + hitColliders.Length);
+                Debug.Log(prefab.name + ": " + hitColliders[1].name);
                 Debug.Log("Something went wrong, generate  " + prefab.name + " prefabs was unsuccesful. " + numberPrefabs + " prefabs not generated. ");
                 break;
             }
         }
     }
 
-    public void regeneratePrefab(int numberPrefabs, GameObject parent, GameObject prefab)
+    public void destroyPrefab(GameObject parent)
     {
         foreach (Transform child in parent.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
-        generatePrefab(numberPrefabs, parent, prefab);
+    }
+
+
+    public void destroyScene()
+    {
+        // trees
+        destroyPrefab(treeParent);
+
+        // log
+        destroyPrefab(logParent);
+
+        // grass
+        destroyPrefab(grassParent);
+
+        // rocks
+        destroyPrefab(rockParent);
+
+        // bush
+        destroyPrefab(bushParent);
+
+        // mushrooms
+        destroyPrefab(redMushroomParent);
+        destroyPrefab(brownMushroomParent);
     }
 
 

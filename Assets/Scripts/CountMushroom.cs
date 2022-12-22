@@ -16,7 +16,7 @@ public class CountMushroom : MonoBehaviour
 
     public GameObject procedureGameObject;
     private Procedure procedure;
-    private GenerateMushroom generateMushroom;
+    private GenerateScene generateScene;
 
     private XRDirectInteractor interactor;
 
@@ -31,10 +31,10 @@ public class CountMushroom : MonoBehaviour
     void Start()
     {
         procedure = procedureGameObject.GetComponent<Procedure>();
-        generateMushroom = procedureGameObject.GetComponent<GenerateMushroom>();
+        generateScene = procedureGameObject.GetComponent<GenerateScene>();
 
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
-          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
     }
 
     public void PickUp()
@@ -58,8 +58,8 @@ public class CountMushroom : MonoBehaviour
                     interactable.transform.gameObject.SetActive(false);
                 }
             }
-            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
-                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
 
         }
     }
@@ -69,8 +69,8 @@ public class CountMushroom : MonoBehaviour
         redMushroomCount = 0;
         brownMushroomCount = 0;
 
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateMushroom.redMushrooms + " \n"
-                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateMushroom.brownMushrooms;
+        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
     }
 
 

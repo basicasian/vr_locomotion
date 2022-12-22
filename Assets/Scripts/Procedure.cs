@@ -27,7 +27,7 @@ public class Procedure : MonoBehaviour
     public GameObject dataRecordingGameObject;
 
     private BodyBasedSteering bodybasedSteeringScript;
-    private GenerateMushroom generateMushroomScript;
+    private GenerateScene generateSceneScript;
     private CountCollision countCollisionScript;
     private CountMushroom countMushroomScript;
     private DataRecording dataRecordingScript;
@@ -40,13 +40,14 @@ public class Procedure : MonoBehaviour
         bodybasedSteeringScript = xrOriginGameObject.GetComponent<BodyBasedSteering>();
         countMushroomScript = rightHandGameObject.GetComponent<CountMushroom>();
         countCollisionScript = cameraGameObject.GetComponent<CountCollision>();
-        generateMushroomScript = GetComponent<GenerateMushroom>();
+        generateSceneScript = GetComponent<GenerateScene>();
         dataRecordingScript = dataRecordingGameObject.GetComponent<DataRecording>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         // before the game
         if (!playingGame && countdown >= 0 && !gameDone)
         {
@@ -60,6 +61,12 @@ public class Procedure : MonoBehaviour
             }
             else
             {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Debug.Log("Generate Scene!");
+                    generateSceneScript.generateScene();
+                }
+
                 startPosition = false;
                 TimeSpan t = TimeSpan.FromSeconds(timelimit);
                 timerText.text = t.ToString(@"mm\:ss");
@@ -80,7 +87,7 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if (countMushroomScript.redMushroomCount == generateMushroomScript.redMushrooms && countMushroomScript.brownMushroomCount == generateMushroomScript.brownMushrooms)
+            if (countMushroomScript.redMushroomCount == generateSceneScript.redMushroom && countMushroomScript.brownMushroomCount == generateSceneScript.brownMushroom)
             {
                 gameText.text = "good job! \n all mushrooms found!";
                 gameFinished();
@@ -94,7 +101,7 @@ public class Procedure : MonoBehaviour
                 gameFinished();
             }
 
-        } 
+        }
     }
 
     private void Awake()
@@ -149,7 +156,8 @@ public class Procedure : MonoBehaviour
         countMushroomScript.resetCount();
         dataRecordingScript.setCreatedCSV(false);
 
-        generateMushroomScript.regenerateMushrooms();
+        generateSceneScript.destroyScene();
+        //generateSceneScript.generateScene();
     }
 
     public Boolean getPlayingGame()
