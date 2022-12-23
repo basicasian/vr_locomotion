@@ -10289,7 +10289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1177830792}
   - component: {fileID: 1177830794}
-  - component: {fileID: 1177830793}
   - component: {fileID: 1177830795}
   m_Layer: 0
   m_Name: Procedure
@@ -10313,26 +10312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1177830793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177830791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d58a6b67f0ac78449bb6e17a35a1da1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redMushroomStumpParent: {fileID: 568046856}
-  redMushroomStumpPreFab: {fileID: 235118928460625474, guid: 0a25ebc084264cb44a0af11a159876c7, type: 3}
-  brownMushroomStumpParent: {fileID: 640809197}
-  brownMushroomStumpPreFab: {fileID: 8719160670434432203, guid: 54d9def3720b1ba4da2da61231055f54, type: 3}
-  distanceX: 3
-  distanceZ: 3
-  redMushrooms: 1
-  brownMushrooms: 1
 --- !u!114 &1177830794
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -125,8 +125,6 @@ public class GenerateScene : MonoBehaviour
 
             if (breakCouter == 5000)
             {
-                Debug.Log(prefab.name + ": " + hitColliders.Length);
-                Debug.Log(prefab.name + ": " + hitColliders[1].name);
                 Debug.Log("Something went wrong, generate  " + prefab.name + " prefabs was unsuccesful. " + numberPrefabs + " prefabs not generated. ");
                 break;
             }

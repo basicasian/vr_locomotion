@@ -47,6 +47,7 @@ public class Procedure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: remove this 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Restart!");
@@ -56,7 +57,7 @@ public class Procedure : MonoBehaviour
         // before the game
         if (!playingGame && countdown >= 0 && !gameDone)
         {
-            // mushroomStumpsGameObject.SetActive(false);
+            mushroomStumpsGameObject.SetActive(false);
 
             if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
