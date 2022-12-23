@@ -61,6 +61,10 @@ public class GenerateScene : MonoBehaviour
 
     public void generateScene()
     {
+        // mushrooms
+        generatePrefab(redMushroom, redMushroomParent, redMushroomPreFab);
+        generatePrefab(brownMushroom, brownMushroomParent, brownMushroomPreFab);
+
         // trees
         generatePrefab(trees, treeParent, firPreFab);
         generatePrefab(trees, treeParent, oakPreFab);
@@ -83,10 +87,7 @@ public class GenerateScene : MonoBehaviour
 
         // bush
         generatePrefab(bush, bushParent, bushPrefab);
-
-        // mushrooms
-        generatePrefab(redMushroom, redMushroomParent, redMushroomPreFab);
-        generatePrefab(brownMushroom, brownMushroomParent, brownMushroomPreFab);
+       
     }
 
     
@@ -105,11 +106,6 @@ public class GenerateScene : MonoBehaviour
 
             float randomPosX = nextFloat(rand, -distanceX, distanceX);
             float randomPosZ = nextFloat(rand, -distanceZ, distanceZ);
-            if (prefab == redMushroomPreFab || prefab == brownMushroomPreFab)
-            {
-                randomPosX = nextFloat(rand, -4, 4);
-                randomPosZ = nextFloat(rand, -4, 4);
-            }
             Vector3 randomPosition = new Vector3(randomPosX, 0, randomPosZ);
 
             // create random roations

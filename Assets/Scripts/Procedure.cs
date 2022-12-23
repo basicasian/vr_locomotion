@@ -47,6 +47,11 @@ public class Procedure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Restart!");
+            RestartGame();
+        }
 
         // before the game
         if (!playingGame && countdown >= 0 && !gameDone)
@@ -157,7 +162,7 @@ public class Procedure : MonoBehaviour
         dataRecordingScript.setCreatedCSV(false);
 
         generateSceneScript.destroyScene();
-        //generateSceneScript.generateScene();
+        generateSceneScript.generateScene();
     }
 
     public Boolean getPlayingGame()
