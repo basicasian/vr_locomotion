@@ -13014,8 +13014,8 @@ MonoBehaviour:
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
-  timeThreshold: 1
-  distanceThreshold: 0.5
+  timeThreshold: 0.5
+  distanceThreshold: 0.3
 --- !u!1001 &1582842267
 PrefabInstance:
   m_ObjectHideFlags: 0

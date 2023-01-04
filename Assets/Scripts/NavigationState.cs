@@ -14,8 +14,8 @@ public class NavigationState : MonoBehaviour
 
     private Vector3 previousLocation = Vector3.zero;
     private Vector3 differenceLocation = Vector3.zero;
-    public float timeThreshold = 1f;
-    public float distanceThreshold = 0.3f;
+    public float timeThreshold;
+    public float distanceThreshold;
     private float countdownTime;
 
     private NavigationStateEnum currentState = NavigationStateEnum.N;
@@ -85,6 +85,9 @@ public class NavigationState : MonoBehaviour
         }
         if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
         {
+            Debug.Log("differenceLocation.x: " + Mathf.Abs(differenceLocation.x));
+            Debug.Log("differenceLocation.z: " + Mathf.Abs(differenceLocation.z));
+
             currentState = NavigationStateEnum.W;
             return;
         }
