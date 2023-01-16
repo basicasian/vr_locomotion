@@ -16,7 +16,7 @@ public class FreezeBack : MonoBehaviour
 
     public TextMeshProUGUI gameText;
 
-    bool halfTurnDone;
+    bool halfTurnDone = false;
     bool sphereCreated = false;
     Vector3 spherePosition;
     GameObject sphere;
@@ -36,8 +36,12 @@ public class FreezeBack : MonoBehaviour
         if (Mathf.Abs(cameraGameObject.transform.position.x) >= RLdistanceX * 0.8 || Mathf.Abs(cameraGameObject.transform.position.z) >= RLdistanceZ * 0.8) 
         {
             
-                halfTurnDone = false;
+
+               if (!halfTurnDone)
+            {
                 StartCoroutine();
+            }
+               
 
         } else
         {
@@ -70,6 +74,7 @@ public class FreezeBack : MonoBehaviour
 
         // step 4 
         // check if the rotation of the user is approximately equals to 180 degrees 
+        // check if the user face the sphere (angle between camera forward and sphere close to 0) 
         float angle = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
         Debug.Log(angle);
 
@@ -83,13 +88,10 @@ public class FreezeBack : MonoBehaviour
 
             // step 6
             // cancel the "virtual half turn"
-            // xrOriginGameObject.transform.Rotate(new Vector3(0, 180, 0));
-            // sceneGameObject.SetActive(true);
+             xrOriginGameObject.transform.Rotate(new Vector3(0, 180, 0));
+             sceneGameObject.SetActive(true);
         }
 
-
-
-        // step 6
 
 
 
