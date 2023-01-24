@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine;
 
-public class FreezeBack : MonoBehaviour
+public class FreezeBackCoroutine : MonoBehaviour
 {
     public GameObject cameraGameObject; // real life
     public GameObject xrOriginGameObject; // game
 
-    public GameObject sceneGameObject; 
+    public GameObject sceneGameObject;
 
     public int RLdistanceX;
     public int RLdistanceZ;
@@ -24,38 +23,35 @@ public class FreezeBack : MonoBehaviour
 
     Vector3 startPosition;
 
+    float angleSphere;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        startCoroutine = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // so if the players back is at the wall, the coroutine does not start 
-        float angleBorder = Vector3.Angle(cameraGameObject.transform.forward, new Vector3(0,0,0) - cameraGameObject.transform.position);
+        float angleBorder = Vector3.Angle(cameraGameObject.transform.forward, new Vector3(0, 0, 0) - cameraGameObject.transform.position);
+         angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
+
         // Debug.Log(angleBorder);
 
         if ((Mathf.Abs(cameraGameObject.transform.position.x) >= RLdistanceX * 0.7 || Mathf.Abs(cameraGameObject.transform.position.z) >= RLdistanceZ * 0.7)
-            && (angleBorder >= 90 && angleBorder <= 120))
+            && (angleBorder >= 90 && angleBorder <= 120) && !startCoroutine)
         {
-           halfTurnDone = false;
-           startCoroutine = true;
+            halfTurnDone = false;
+            startCoroutine = true;
+            StartCoroutine("FreezeTurn");
 
-        } else
-        {
-            gameText.text = "";
         }
-
-        if (startCoroutine)
-        {
-            Coroutine();
-        }
-
+ 
     }
 
-    void Coroutine()
+    IEnumerator FreezeTurn()
     {
 
         // step 1 
@@ -67,7 +63,7 @@ public class FreezeBack : MonoBehaviour
         if (!sphereCreated)
         {
             sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            spherePosition = Vector3.ProjectOnPlane(cameraGameObject.transform.position,Vector3.up) - (Vector3.ProjectOnPlane(cameraGameObject.transform.forward,Vector3.up) * 1.5f);
+            spherePosition = Vector3.ProjectOnPlane(cameraGameObject.transform.position, Vector3.up) - (Vector3.ProjectOnPlane(cameraGameObject.transform.forward, Vector3.up) * 1.5f);
             spherePosition.y = cameraGameObject.transform.position.y;
             sphere.transform.position = spherePosition;
             sphere.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -82,21 +78,20 @@ public class FreezeBack : MonoBehaviour
         // step 4 
         // check if the rotation of the user is approximately equals to 180 degrees 
         // check if the user face the sphere (angle between camera forward and sphere close to 0) 
-        float angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
-        if (angleSphere <= 20)
-        {
-            halfTurnDone = true;
-            gameText.text = "looked at the sphere";
+        yield return new WaitUntil(() => angleSphere <= 20);
 
-            // step 5
-            GameObject.Destroy(sphere);
-            startCoroutine = false;
-            sphereCreated = false;
+        halfTurnDone = true;
+        gameText.text = "looked at the sphere";
 
-            // step 6
-            // cancel the "virtual half turn"
-            xrOriginGameObject.transform.Rotate(new Vector3(0, 180, 0));
-           sceneGameObject.SetActive(true);
-        }
+        // step 5
+        if(sphereCreated) GameObject.Destroy(sphere);
+        startCoroutine = false;
+        sphereCreated = false;
+
+        // step 6
+        // cancel the "virtual half turn"
+        xrOriginGameObject.transform.Rotate(new Vector3(0, 180, 0));
+        sceneGameObject.SetActive(true);
+        gameText.text = "";
     }
 }
