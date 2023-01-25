@@ -38,6 +38,9 @@ public class FreezeBackCoroutine : MonoBehaviour
         float angleBorder = Vector3.Angle(cameraGameObject.transform.forward, new Vector3(0, 0, 0) - cameraGameObject.transform.position);
         angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
 
+        // to debug
+        gameText.text = "pos: " + Mathf.Abs(cameraGameObject.transform.position.x).ToString() + "; " + Mathf.Abs(cameraGameObject.transform.position.z).ToString();
+
         if ((Mathf.Abs(cameraGameObject.transform.position.x) >= RLdistanceX * 0.9 || Mathf.Abs(cameraGameObject.transform.position.z) >= RLdistanceZ * 0.9)
             && (angleBorder >= 90 && angleBorder <= 120) && !startCoroutine)
         {
