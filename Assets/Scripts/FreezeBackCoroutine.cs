@@ -36,17 +36,14 @@ public class FreezeBackCoroutine : MonoBehaviour
     {
         // so if the players back is at the wall, the coroutine does not start 
         float angleBorder = Vector3.Angle(cameraGameObject.transform.forward, new Vector3(0, 0, 0) - cameraGameObject.transform.position);
-         angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
+        angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
 
-        // Debug.Log(angleBorder);
-
-        if ((Mathf.Abs(cameraGameObject.transform.position.x) >= RLdistanceX * 0.7 || Mathf.Abs(cameraGameObject.transform.position.z) >= RLdistanceZ * 0.7)
+        if ((Mathf.Abs(cameraGameObject.transform.position.x) >= RLdistanceX * 0.9 || Mathf.Abs(cameraGameObject.transform.position.z) >= RLdistanceZ * 0.9)
             && (angleBorder >= 90 && angleBorder <= 120) && !startCoroutine)
         {
             halfTurnDone = false;
             startCoroutine = true;
             StartCoroutine("FreezeTurn");
-
         }
  
     }
