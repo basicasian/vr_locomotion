@@ -85,8 +85,8 @@ public class NavigationState : MonoBehaviour
         }
         if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
         {
-            Debug.Log("differenceLocation.x: " + Mathf.Abs(differenceLocation.x));
-            Debug.Log("differenceLocation.z: " + Mathf.Abs(differenceLocation.z));
+            //Debug.Log("differenceLocation.x: " + Mathf.Abs(differenceLocation.x));
+            //Debug.Log("differenceLocation.z: " + Mathf.Abs(differenceLocation.z));
 
             currentState = NavigationStateEnum.W;
             return;
