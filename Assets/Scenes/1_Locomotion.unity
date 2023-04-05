@@ -5933,7 +5933,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783844406}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5375601c250a9d949bc80c2ddc45d7bb, type: 3}
   m_Name: 
@@ -9860,7 +9860,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148749078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
@@ -10425,7 +10425,6 @@ GameObject:
   - component: {fileID: 1177830792}
   - component: {fileID: 1177830794}
   - component: {fileID: 1177830795}
-  - component: {fileID: 1177830796}
   - component: {fileID: 1177830797}
   m_Layer: 0
   m_Name: Procedure
@@ -10461,7 +10460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c506559e8b9b13448b6ff5465c2ffdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timelimit: 120
+  timelimit: 60
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
   startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -10471,6 +10470,7 @@ MonoBehaviour:
   cameraGameObject: {fileID: 153130379}
   mushroomStumpsGameObject: {fileID: 696439827}
   dataRecordingGameObject: {fileID: 1575796350}
+  locomotion: {fileID: 1148749078}
 --- !u!114 &1177830795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10514,24 +10514,6 @@ MonoBehaviour:
   bushParent: {fileID: 641720848}
   bushPrefab: {fileID: 6355420156855632996, guid: 1088a2d003eb0b84786932fc134c1e52, type: 3}
   bush: 5
---- !u!114 &1177830796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177830791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d2f1c0113c96c4c9782d44a3356f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraGameObject: {fileID: 153130379}
-  xrOriginGameObject: {fileID: 783844406}
-  sceneGameObject: {fileID: 1482106332}
-  RLdistanceX: 1
-  RLdistanceZ: 1
-  gameText: {fileID: 5632789}
 --- !u!114 &1177830797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10547,9 +10529,8 @@ MonoBehaviour:
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   sceneGameObject: {fileID: 1482106332}
-  RLdistanceX: 1
-  RLdistanceZ: 1
   gameText: {fileID: 5632789}
+  distTriggerFreezeBackup: 0.7
 --- !u!1 &1187288967
 GameObject:
   m_ObjectHideFlags: 0

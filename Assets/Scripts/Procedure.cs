@@ -26,6 +26,8 @@ public class Procedure : MonoBehaviour
     public GameObject mushroomStumpsGameObject;
     public GameObject dataRecordingGameObject;
 
+    public GameObject locomotion;
+
     private BodyBasedSteering bodybasedSteeringScript;
     private GenerateScene generateSceneScript;
     private CountCollision countCollisionScript;
@@ -125,6 +127,10 @@ public class Procedure : MonoBehaviour
         {
             playingGame = true;
             gameText.text = "";
+            // activate locomotion script only when game starts
+            xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
+            locomotion.GetComponent<TeleportationProvider>().enabled = true;
+
 
         } 
     }

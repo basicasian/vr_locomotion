@@ -60,7 +60,7 @@ public class DataRecording : MonoBehaviour
         tw.WriteLine(
                    Time.frameCount + ";" + t.ToString(@"mm\:ss\:ff") + ";"
                 + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
-                + cameraGameObject.transform.position.x + ";" + cameraGameObject.transform.position.y + ";" + cameraGameObject.transform.position.z + ";"
+                + cameraGameObject.transform.localPosition.x + ";" + cameraGameObject.transform.localPosition.y + ";" + cameraGameObject.transform.localPosition.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
                 + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
                 + navigationState.getNavigationState());
