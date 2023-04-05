@@ -74,7 +74,7 @@ public class DataRecording : MonoBehaviour
         DateTime dt = DateTime.Now;
         string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
 
-        filename = Application.dataPath + "/DataRecording/" + dateString + ".csv";
+        filename = "DataRecording/" + dateString + ".csv";
 
         // false = overwrite
         tw = new StreamWriter(filename, false);
