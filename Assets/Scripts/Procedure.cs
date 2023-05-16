@@ -170,6 +170,8 @@ public class Procedure : MonoBehaviour
 
         generateSceneScript.destroyScene();
         generateSceneScript.generateScene();
+
+        xrOriginGameObject.transform.position = Vector3.zero;
     }
 
     public Boolean getPlayingGame()
