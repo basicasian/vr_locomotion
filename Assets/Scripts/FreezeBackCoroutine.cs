@@ -124,7 +124,7 @@ public class FreezeBackCoroutine : MonoBehaviour
                 {
                     Debug.Log("point " + i++ + " : " + pos);
                     // put a cube at each corner (for debug purpose)
-                    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), pos, Quaternion.identity);                    
+                    //Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), pos, Quaternion.identity);                    
                 }
             }
             // set min max distance (assuming we will always make rectangular or sqaure workspace
