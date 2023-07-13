@@ -49,7 +49,7 @@ public class FreezeBackCoroutine : MonoBehaviour
         angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
 
         // to debug
-        gameText.text = "pos: " + Mathf.Abs(cameraGameObject.transform.localPosition.x).ToString() + "; " + Mathf.Abs(cameraGameObject.transform.localPosition.z).ToString() + ";"  + angleBorder.ToString();
+        // gameText.text = "pos: " + Mathf.Abs(cameraGameObject.transform.localPosition.x).ToString() + "; " + Mathf.Abs(cameraGameObject.transform.localPosition.z).ToString() + ";"  + angleBorder.ToString();
 
         
         if ( ( Mathf.Abs(cameraGameObject.transform.localPosition.x) >= RLMaxDistanceX * distTriggerFreezeBackup || Mathf.Abs(cameraGameObject.transform.localPosition.z) >= RLMaxDistanceZ * distTriggerFreezeBackup) && angleBorder <= 90 && !startCoroutine)
