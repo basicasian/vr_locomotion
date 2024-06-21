@@ -33,8 +33,8 @@ public class CountMushroom : MonoBehaviour
         procedure = procedureGameObject.GetComponent<Procedure>();
         generateScene = procedureGameObject.GetComponent<GenerateScene>();
 
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
-          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
+       // mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+       //   + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
     }
 
     public void PickUp()
@@ -58,8 +58,8 @@ public class CountMushroom : MonoBehaviour
                     interactable.transform.gameObject.SetActive(false);
                 }
             }
-            mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
-                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
+         //   mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+          //      + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
 
         }
     }
@@ -69,8 +69,8 @@ public class CountMushroom : MonoBehaviour
         redMushroomCount = 0;
         brownMushroomCount = 0;
 
-        mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
-                + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
+       // mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
+      //          + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
     }
 
 

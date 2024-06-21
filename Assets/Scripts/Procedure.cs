@@ -8,7 +8,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Procedure : MonoBehaviour
 {
-
+    public enum Condition
+    {
+        W,S,T,A
+    }
+    public Condition condition;
     public float timelimit;
     private float countdown;
     private Boolean playingGame = false;
@@ -139,9 +143,28 @@ public class Procedure : MonoBehaviour
         {
             playingGame = true;
             gameText.text = "";
-            // activate locomotion script only when game starts
-            xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
-            locomotion.GetComponent<TeleportationProvider>().enabled = true;
+            // activate locomotion script only when game starts and based on condition
+            if (condition.Equals(Condition.A))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
+                locomotion.GetComponent<TeleportationProvider>().enabled = true;
+            }
+            if (condition.Equals(Condition.W))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
+                locomotion.GetComponent<TeleportationProvider>().enabled = false;
+            }
+            if (condition.Equals(Condition.S))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
+                locomotion.GetComponent<TeleportationProvider>().enabled = false;
+            }
+            if (condition.Equals(Condition.T))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
+                locomotion.GetComponent<TeleportationProvider>().enabled = true;
+            }
+
 
 
         } 
