@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 153130381}
   - component: {fileID: 153130386}
   - component: {fileID: 153130387}
+  - component: {fileID: 153130388}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1179,6 +1180,20 @@ MonoBehaviour:
   collisionCount: 0
   countText: {fileID: 512421985}
   procedureGameObject: {fileID: 1177830791}
+--- !u!114 &153130388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153130379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7b0210d3aa3240b5d0b698c49d5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalDistance: 0
+  local: 1
 --- !u!1001 &156511930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6066,6 +6081,7 @@ GameObject:
   - component: {fileID: 783844408}
   - component: {fileID: 783844410}
   - component: {fileID: 783844413}
+  - component: {fileID: 783844414}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -6137,6 +6153,20 @@ MonoBehaviour:
   mainCamera: {fileID: 153130384}
   xrOrigin: {fileID: 783844408}
   speed: 2
+--- !u!114 &783844414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783844406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7b0210d3aa3240b5d0b698c49d5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalDistance: 0
+  local: 0
 --- !u!1001 &789982178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13385,6 +13415,8 @@ MonoBehaviour:
   procedureGameObject: {fileID: 1177830791}
   navigationState: {fileID: 1575796353}
   distMushroom: {fileID: 1177830798}
+  distVE: {fileID: 783844414}
+  distRE: {fileID: 153130388}
 --- !u!4 &1575796352
 Transform:
   m_ObjectHideFlags: 0

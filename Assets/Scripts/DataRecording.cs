@@ -26,6 +26,8 @@ public class DataRecording : MonoBehaviour
     private Procedure procedure; // procedure
 
     public DistToMushroom distMushroom;
+    public DistanceTracker distVE;
+    public DistanceTracker distRE;
 
     Boolean createdCSV = false;
 
@@ -65,7 +67,7 @@ public class DataRecording : MonoBehaviour
                 + cameraGameObject.transform.localPosition.x + ";" + cameraGameObject.transform.localPosition.y + ";" + cameraGameObject.transform.localPosition.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
                 + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
-                + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom);
+                + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom + ";" + distVE.totalDistance + ";" + distRE.totalDistance );
 
         tw.Close();
         
@@ -83,7 +85,7 @@ public class DataRecording : MonoBehaviour
         tw.WriteLine("FrameID;Time;CollisionCount;RedMushroomCount;BrownMushroomCount;" +
             "RLPositionX;RLPositionY;RLPositionZ;GamePositionX;GamePositionY;GamePositionZ;" +
             "RotationX;RotationY;RotationZ;" +
-            "NavigationState;" + "DistClosestMushroom");
+            "NavigationState;" + "DistClosestMushroom;DistanceVE;DistanceRE");
         tw.Close();
 
         createdCSV = true;

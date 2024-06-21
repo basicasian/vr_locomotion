@@ -52,7 +52,7 @@ public class DistToMushroom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindClosestChild(Procedure.Condition.A);
-        Debug.Log(closestMushroom);
+        //FindClosestChild(Procedure.Condition.A);
+        //Debug.Log(closestMushroom);
     }
 }
