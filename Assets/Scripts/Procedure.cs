@@ -86,7 +86,7 @@ public class Procedure : MonoBehaviour
         {
             // during game
             mushroomStumpsGameObject.SetActive(true);
-
+            gameText.text = "";
             if (countdown > 0 && !gameDone)
             {
                 countdown -= Time.deltaTime;
@@ -117,7 +117,7 @@ public class Procedure : MonoBehaviour
             // lose condition 
             if (countdown < 0)
             {
-                gameText.text = "time's up!";
+                gameText.text = "time's up! take off the HMD";
                 gameFinished();
             }
 
