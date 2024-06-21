@@ -90,6 +90,9 @@ public class Procedure : MonoBehaviour
         {
             // during game
             mushroomStumpsGameObject.SetActive(true);
+
+            GetComponent<DistToMushroom>().FindClosestChild(condition);
+
             gameText.text = "";
             if (countdown > 0 && !gameDone)
             {

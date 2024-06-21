@@ -25,7 +25,7 @@ public class BodyBasedSteering : MonoBehaviour
     private void Steering()
     {
         Vector3 deltaSteering = (Vector3.Scale(mainCamera.transform.forward, new Vector3(1.0f, 0.0f, 1.0f))); 
-        xrOrigin.transform.position += deltaSteering * speed * Time.deltaTime;
+        transform.position += deltaSteering * speed * Time.deltaTime;
     }
 
     public void SetActive(bool value)
