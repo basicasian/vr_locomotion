@@ -47,7 +47,7 @@ public class NavigationState : MonoBehaviour
             */
         }
 
-        if (((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold)) &&
+      /*  if (((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold)) &&
               steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
         {
             currentState = NavigationStateEnum.WST;
@@ -69,7 +69,7 @@ public class NavigationState : MonoBehaviour
         {
             currentState = NavigationStateEnum.WT;
             return;
-        }
+        }*/
 
 
         if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf)
