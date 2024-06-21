@@ -59,6 +59,12 @@ public class GenerateScene : MonoBehaviour
         generateScene();
     }
 
+    public void generateMushrooms(int mushroomType)
+    {
+        if(mushroomType == 0) generatePrefab(redMushroom, redMushroomParent, redMushroomPreFab);
+        else generatePrefab(brownMushroom, brownMushroomParent, brownMushroomPreFab);
+    }
+
     public void generateScene()
     {
         // mushrooms

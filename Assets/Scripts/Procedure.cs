@@ -95,11 +95,23 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if (countMushroomScript.redMushroomCount == generateSceneScript.redMushroom && countMushroomScript.brownMushroomCount == generateSceneScript.brownMushroom)
+            if ((countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 0)
             {
-                gameText.text = "good job! \n all mushrooms found!";
-                gameFinished();
-               
+                //gameText.text = "good job! \n all mushrooms found!";
+                //gameFinished();
+                //generate new mushrooms
+                Debug.Log("Generate new red mushrooms");
+                GetComponent<GenerateScene>().generateMushrooms(0);
+            }
+
+            // win condition
+            if ((countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 0)
+            {
+                //gameText.text = "good job! \n all mushrooms found!";
+                //gameFinished();
+                //generate new mushrooms
+                Debug.Log("Generate new brown mushrooms");
+                GetComponent<GenerateScene>().generateMushrooms(1);
             }
 
             // lose condition 
