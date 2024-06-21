@@ -6,7 +6,7 @@ using System;
 
 public class DataRecording : MonoBehaviour
 {
-    private string filename = "";
+    public string filename = "";
 
     private int redMushroomCount;
     private int brownMushroomCount;
@@ -24,6 +24,8 @@ public class DataRecording : MonoBehaviour
     public GameObject procedureGameObject;
     public NavigationState navigationState; // navigation state
     private Procedure procedure; // procedure
+
+    public DistToMushroom distMushroom;
 
     Boolean createdCSV = false;
 
@@ -58,12 +60,12 @@ public class DataRecording : MonoBehaviour
         TimeSpan t = TimeSpan.FromSeconds(currentTime);
 
         tw.WriteLine(
-                   Time.frameCount + ";" + t.ToString(@"mm\:ss\:ff") + ";"
+                   Time.frameCount + ";" + currentTime + ";"
                 + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
                 + cameraGameObject.transform.localPosition.x + ";" + cameraGameObject.transform.localPosition.y + ";" + cameraGameObject.transform.localPosition.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
                 + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
-                + navigationState.getNavigationState());
+                + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom);
 
         tw.Close();
         
@@ -72,16 +74,16 @@ public class DataRecording : MonoBehaviour
     private void createCSV()
     {
         DateTime dt = DateTime.Now;
-        string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
+        //string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
 
-        filename = "DataRecording/" + dateString + ".csv";
+        string ffilename = "DataRecording/" + filename + ".csv";
 
         // false = overwrite
-        tw = new StreamWriter(filename, false);
-        tw.WriteLine("Frame ID; Time; Collision Count; Red Mushroom Count; Brown Mushroom Count; " +
-            "RL Position X; RL Position Y; RL Position Z; Game Position X; Game Position Y; Game Position Z; " +
-            "Rotation X; Rotation Y; Rotation Z; " +
-            "Navigation State");
+        tw = new StreamWriter(ffilename, false);
+        tw.WriteLine("FrameID;Time;CollisionCount;RedMushroomCount;BrownMushroomCount;" +
+            "RLPositionX;RLPositionY;RLPositionZ;GamePositionX;GamePositionY;GamePositionZ;" +
+            "RotationX;RotationY;RotationZ;" +
+            "NavigationState;" + "DistClosestMushroom");
         tw.Close();
 
         createdCSV = true;
