@@ -12,7 +12,17 @@ public class Procedure : MonoBehaviour
     {
         W,S,T,A
     }
-    public Condition condition;
+    public enum Workspace
+    {
+        S,M
+    }
+    public enum VE
+    {
+        S,M,L
+    }
+    public Workspace workspace;
+    public VE ve;
+    private Condition condition = Condition.A;
     public float timelimit;
     private float countdown;
     private Boolean playingGame = false;
@@ -48,6 +58,11 @@ public class Procedure : MonoBehaviour
         countCollisionScript = cameraGameObject.GetComponent<CountCollision>();
         generateSceneScript = GetComponent<GenerateScene>();
         dataRecordingScript = dataRecordingGameObject.GetComponent<DataRecording>();
+    }
+
+    public Condition GetCondition()
+    {
+        return condition;
     }
 
     // Update is called once per frame
