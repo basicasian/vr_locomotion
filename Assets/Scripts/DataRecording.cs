@@ -11,7 +11,6 @@ public class DataRecording : MonoBehaviour
     private int redMushroomCount;
     private int brownMushroomCount;
     
-    private TextWriter tw;
     private float currentTime = 0;
 
     public GameObject cameraGameObject; // real life
@@ -32,6 +31,7 @@ public class DataRecording : MonoBehaviour
     Boolean createdCSV = false;
 
     private int frameID;
+    private StreamWriter tw;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +40,7 @@ public class DataRecording : MonoBehaviour
         countCollision = cameraGameObject.GetComponent<CountCollision>();
         procedure = procedureGameObject.GetComponent<Procedure>();
         frameID = 0;
+        createCSV();
     }
 
     // Update is called once per frame
@@ -55,11 +56,6 @@ public class DataRecording : MonoBehaviour
 
     private void writeCSV()
     {
-        if (!createdCSV)
-        {
-            createCSV();
-        }
-        tw = new StreamWriter(filename, true);
 
         currentTime = currentTime + Time.deltaTime;
         TimeSpan t = TimeSpan.FromSeconds(currentTime);
@@ -71,16 +67,18 @@ public class DataRecording : MonoBehaviour
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
                 + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
                 + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom + ";" + distVE.totalDistance + ";" + distRE.totalDistance );
-
-        tw.Close();
         
+    }
+
+    private void OnDestroy()
+    {
+        tw.Close();
     }
 
     private void createCSV()
     {
         DateTime dt = DateTime.Now;
         //string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
-
         filename = "DataRecording/" + procedure.GetCondition().ToString() + "-" + procedure.workspace.ToString() + "-" + procedure.ve.ToString() + ".csv";
 
         // false = overwrite
@@ -89,7 +87,6 @@ public class DataRecording : MonoBehaviour
             "RLPositionX;RLPositionY;RLPositionZ;GamePositionX;GamePositionY;GamePositionZ;" +
             "RotationX;RotationY;RotationZ;" +
             "NavigationState;" + "DistClosestMushroom;DistanceVE;DistanceRE");
-        tw.Close();
 
         createdCSV = true;
     }
