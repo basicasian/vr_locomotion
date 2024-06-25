@@ -179,7 +179,7 @@ public class Procedure : MonoBehaviour
 
     private void Awake()
     {
-        //startGameReference.action.started += StartGame;
+       startGameReference.action.started += StartGame;
 
        // not needed because game objects are public
        // rightHandGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
