@@ -30,7 +30,7 @@ public class DistanceTracker : MonoBehaviour
 
         // Log the distance moved this frame and the total distance
         // Debug.Log("Distance this frame: " + distanceThisFrame + " units");
-        if(local) Debug.Log("Total REAL distance: " + totalDistance + " units");
-        else Debug.Log("Total VIRTUAL distance: " + totalDistance + " units");
+        //if(local) Debug.Log("Total REAL distance: " + totalDistance + " units");
+        //else Debug.Log("Total VIRTUAL distance: " + totalDistance + " units");
     }
 }
