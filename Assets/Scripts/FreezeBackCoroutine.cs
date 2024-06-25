@@ -32,32 +32,57 @@ public class FreezeBackCoroutine : MonoBehaviour
 
     public float distTriggerFreezeBackup;
 
+    private float angleBorder;
 
     // Start is called before the first frame update
     void Start()
     {
         startCoroutine = false;
         // get boundaries of SteamVR workspace
-        GetBoundaryVertices();
+        //GetBoundaryVertices();
+        if (GetComponent<Procedure>().workspace.Equals(Procedure.Workspace.S))
+        {
+            RLMinDistanceX = -1;
+            RLMaxDistanceX = 1;
+            RLMinDistanceZ = -1;
+            RLMaxDistanceZ = 1;
+        }
+        else
+        {
+            RLMinDistanceX = -2;
+            RLMaxDistanceX = 2;
+            RLMinDistanceZ = -2;
+            RLMaxDistanceZ = 2;
+        }
+        Debug.Log(RLMaxDistanceX + " " + RLMaxDistanceZ);
     }
 
     // Update is called once per frame
     void Update()
     {
         // so if the players back is at the wall, the coroutine does not start 
-        float angleBorder = Vector3.Angle(Vector3.ProjectOnPlane(cameraGameObject.transform.forward,Vector3.up), Vector3.ProjectOnPlane(cameraGameObject.transform.position- Vector3.zero, Vector3.up));
+        angleBorder = Vector3.Angle(Vector3.ProjectOnPlane(cameraGameObject.transform.forward,Vector3.up), Vector3.ProjectOnPlane(cameraGameObject.transform.position- Vector3.zero, Vector3.up));
         angleSphere = Vector3.Angle(cameraGameObject.transform.forward, spherePosition - cameraGameObject.transform.position); // todo: does not work when getting closer
 
         // to debug
         // gameText.text = "pos: " + Mathf.Abs(cameraGameObject.transform.localPosition.x).ToString() + "; " + Mathf.Abs(cameraGameObject.transform.localPosition.z).ToString() + ";"  + angleBorder.ToString();
 
         
-        if ( ( Mathf.Abs(cameraGameObject.transform.localPosition.x) >= RLMaxDistanceX * distTriggerFreezeBackup || Mathf.Abs(cameraGameObject.transform.localPosition.z) >= RLMaxDistanceZ * distTriggerFreezeBackup) && angleBorder <= 90 && !startCoroutine)
+        /*if ( ( Mathf.Abs(cameraGameObject.transform.localPosition.x) >= RLMaxDistanceX || Mathf.Abs(cameraGameObject.transform.localPosition.z) >= RLMaxDistanceZ) && angleBorder <= 90 && !startCoroutine)
         {
             halfTurnDone = false;
             startCoroutine = true;
             StartCoroutine("FreezeTurn");
-        } 
+        } */
+    }
+
+    public void Freeze()
+    {
+        if (angleBorder <= 90 && !startCoroutine) { 
+            halfTurnDone = false;
+            startCoroutine = true;
+            StartCoroutine("FreezeTurn");
+        }
     }
 
     IEnumerator FreezeTurn()
@@ -87,13 +112,15 @@ public class FreezeBackCoroutine : MonoBehaviour
         // step 4 
         // check if the rotation of the user is approximately equals to 180 degrees 
         // check if the user face the sphere (angle between camera forward and sphere close to 0) 
-        yield return new WaitUntil(() => angleSphere <= 20);
+        yield return new WaitUntil(() => angleSphere <= 10);
 
         halfTurnDone = true;
-        gameText.text = "looked at the sphere";
+        gameText.text = "Walk towards the sphere";
+
+        yield return new WaitUntil(() => OutsideWorkspace.playerIsBack);
 
         // step 5
-        if(sphereCreated) GameObject.Destroy(sphere);
+        if (sphereCreated) GameObject.Destroy(sphere);
         startCoroutine = false;
         sphereCreated = false;
 

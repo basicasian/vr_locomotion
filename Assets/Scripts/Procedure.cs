@@ -107,11 +107,11 @@ public class Procedure : MonoBehaviour
         {
             mushroomStumpsGameObject.SetActive(false);
 
-            if (cameraGameObject.transform.position.x < 0.5f && cameraGameObject.transform.position.x > -0.5f &&
-                cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
+            if (cameraGameObject.transform.position.x < 0.10f && cameraGameObject.transform.position.x > -0.10f &&
+                cameraGameObject.transform.position.z < 0.10f && cameraGameObject.transform.position.z > -0.10f)
             {
                 startPosition = true;
-                gameText.text = "to start game press S key";
+                gameText.text = "to start game press S key or menu button";
             }
             else
             {
