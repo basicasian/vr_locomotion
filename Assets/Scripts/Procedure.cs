@@ -42,6 +42,8 @@ public class Procedure : MonoBehaviour
 
     public GameObject locomotion;
 
+    public GameObject startGO;
+
     private BodyBasedSteering bodybasedSteeringScript;
     private GenerateScene generateSceneScript;
     private CountCollision countCollisionScript;
@@ -213,7 +215,8 @@ public class Procedure : MonoBehaviour
                 xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
                 locomotion.GetComponent<TeleportationProvider>().enabled = true;
             }
-        } 
+        }
+        startGO.SetActive(false);
     }
 
     private void StartGame()
@@ -244,6 +247,7 @@ public class Procedure : MonoBehaviour
                 locomotion.GetComponent<TeleportationProvider>().enabled = true;
             }
         }
+        startGO.SetActive(false);
     }
 
     private void gameFinished()
