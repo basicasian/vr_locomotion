@@ -34734,7 +34734,7 @@ MonoBehaviour:
   redMushroomCount: 0
   brownMushroomCount: 0
   mushroomCountText: {fileID: 544451233}
-  procedureGameObject: {fileID: 1177830791}
+  procedureGameObject: {fileID: 1036003662}
 --- !u!4 &1900103802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
@@ -37577,7 +37577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2072914072
 RectTransform:
   m_ObjectHideFlags: 0

@@ -93,7 +93,7 @@ public class Procedure : MonoBehaviour
                 cameraGameObject.transform.position.z < 0.5f && cameraGameObject.transform.position.z > -0.5f)
             {
                 startPosition = true;
-                gameText.text = "to start game press the trackpad";
+                gameText.text = "to start game press S key";
             }
             else
             {
@@ -157,7 +157,7 @@ public class Procedure : MonoBehaviour
 
     private void Awake()
     {
-        startGameReference.action.started += StartGame;
+        //startGameReference.action.started += StartGame;
 
        // not needed because game objects are public
        // rightHandGameObject = GameObject.FindGameObjectWithTag("RightDirectHand");
