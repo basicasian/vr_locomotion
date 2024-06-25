@@ -76,11 +76,15 @@ public class GenerateScene : MonoBehaviour
         generatePrefab(trees, treeParent, oakPreFab);
         generatePrefab(trees, treeParent, palmPreFab);
         generatePrefab(trees, treeParent, poplarPreFab);
-        generatePrefab(trees, treeParent, tree1PreFab);
-        generatePrefab(trees, treeParent, tree2PreFab);
-        generatePrefab(trees, treeParent, tree3PreFab);
-        generatePrefab(trees, treeParent, tree4PreFab);
-        generatePrefab(trees, treeParent, tree5PreFab);
+        if (GetComponent<Procedure>().getVE().Equals(Procedure.VE.S))
+        {
+             generatePrefab(trees, treeParent, tree1PreFab);
+             generatePrefab(trees, treeParent, tree2PreFab);
+             generatePrefab(trees, treeParent, tree3PreFab);
+             generatePrefab(trees, treeParent, tree4PreFab);
+            //generatePrefab(trees, treeParent, tree5PreFab);
+        }
+
 
         // log
         generatePrefab(log, logParent, logPrefab);
@@ -119,7 +123,7 @@ public class GenerateScene : MonoBehaviour
             Vector3 randomRotation = new Vector3(0, randomRotY, 0);
 
             // check if there are other objects
-            var hitColliders = Physics.OverlapSphere(randomPosition, 2); // second parameter is radius
+            var hitColliders = Physics.OverlapSphere(randomPosition, 0.5f); // second parameter is radius
 
             breakCouter++;
             if (hitColliders.Length == 1) // for some reason there is always 1 (maybe plane)
@@ -131,7 +135,7 @@ public class GenerateScene : MonoBehaviour
 
             if (breakCouter == 5000)
             {
-                Debug.Log("Something went wrong, generate  " + prefab.name + " prefabs was unsuccesful. " + numberPrefabs + " prefabs not generated. ");
+                Debug.LogWarning("Something went wrong, generate  " + prefab.name + " prefabs was unsuccesful. " + numberPrefabs + " prefabs not generated. ");
                 break;
             }
         }

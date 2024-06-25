@@ -28,7 +28,7 @@ public class DistanceTracker : MonoBehaviour
         lastPosition = transform.position;
 
         // Log the distance moved this frame and the total distance
-        Debug.Log("Distance this frame: " + distanceThisFrame + " units");
-        Debug.Log("Total distance: " + totalDistance + " units");
+       // Debug.Log("Distance this frame: " + distanceThisFrame + " units");
+      //  Debug.Log("Total distance: " + totalDistance + " units");
     }
 }

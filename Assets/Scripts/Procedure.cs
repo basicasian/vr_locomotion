@@ -65,6 +65,11 @@ public class Procedure : MonoBehaviour
         return condition;
     }
 
+    public VE getVE()
+    {
+        return ve;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -73,6 +78,10 @@ public class Procedure : MonoBehaviour
         {
             Debug.Log("Restart!");
             RestartGame();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            StartGame();
         }
 
         // before the game
@@ -117,7 +126,7 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if ((countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 0)
+            if (countMushroomScript.redMushroomCount != 0 && (countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 0)
             {
                 //gameText.text = "good job! \n all mushrooms found!";
                 //gameFinished();
@@ -127,7 +136,7 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if ((countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 0)
+            if (countMushroomScript.brownMushroomCount != 0 && (countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 0)
             {
                 //gameText.text = "good job! \n all mushrooms found!";
                 //gameFinished();
@@ -182,11 +191,39 @@ public class Procedure : MonoBehaviour
                 xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
                 locomotion.GetComponent<TeleportationProvider>().enabled = true;
             }
-
-
-
         } 
     }
+
+    private void StartGame()
+    {
+        if (startPosition)
+        {
+            playingGame = true;
+            gameText.text = "";
+            // activate locomotion script only when game starts and based on condition
+            if (condition.Equals(Condition.A))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
+                locomotion.GetComponent<TeleportationProvider>().enabled = true;
+            }
+            if (condition.Equals(Condition.W))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
+                locomotion.GetComponent<TeleportationProvider>().enabled = false;
+            }
+            if (condition.Equals(Condition.S))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = true;
+                locomotion.GetComponent<TeleportationProvider>().enabled = false;
+            }
+            if (condition.Equals(Condition.T))
+            {
+                xrOriginGameObject.GetComponent<BodyBasedSteering>().enabled = false;
+                locomotion.GetComponent<TeleportationProvider>().enabled = true;
+            }
+        }
+    }
+
     private void gameFinished()
     {
         playingGame = false;

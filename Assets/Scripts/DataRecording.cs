@@ -31,12 +31,15 @@ public class DataRecording : MonoBehaviour
 
     Boolean createdCSV = false;
 
+    private int frameID;
+
     // Start is called before the first frame update
     void Start()
     {
         countMushroom = rightHandGameObject.GetComponent<CountMushroom>();
         countCollision = cameraGameObject.GetComponent<CountCollision>();
         procedure = procedureGameObject.GetComponent<Procedure>();
+        frameID = 0;
     }
 
     // Update is called once per frame
@@ -62,7 +65,7 @@ public class DataRecording : MonoBehaviour
         TimeSpan t = TimeSpan.FromSeconds(currentTime);
 
         tw.WriteLine(
-                   Time.frameCount + ";" + currentTime + ";"
+                   frameID++ + ";" + currentTime + ";"
                 + countCollision.collisionCount + ";" + countMushroom.redMushroomCount + ";" + countMushroom.brownMushroomCount + ";"
                 + cameraGameObject.transform.localPosition.x + ";" + cameraGameObject.transform.localPosition.y + ";" + cameraGameObject.transform.localPosition.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
@@ -78,10 +81,10 @@ public class DataRecording : MonoBehaviour
         DateTime dt = DateTime.Now;
         //string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
 
-        string ffilename = "DataRecording/" + procedure.GetCondition().ToString() + "-" + procedure.workspace.ToString() + "-" + procedure.ve.ToString() + ".csv";
+        filename = "DataRecording/" + procedure.GetCondition().ToString() + "-" + procedure.workspace.ToString() + "-" + procedure.ve.ToString() + ".csv";
 
         // false = overwrite
-        tw = new StreamWriter(ffilename, false);
+        tw = new StreamWriter(filename, false);
         tw.WriteLine("FrameID;Time;CollisionCount;RedMushroomCount;BrownMushroomCount;" +
             "RLPositionX;RLPositionY;RLPositionZ;GamePositionX;GamePositionY;GamePositionZ;" +
             "RotationX;RotationY;RotationZ;" +
