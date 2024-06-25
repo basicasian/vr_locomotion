@@ -14,9 +14,8 @@ public class CountMushroom : MonoBehaviour
 
     public TextMeshProUGUI mushroomCountText;
 
-  //  public GameObject procedureGameObject;
-   // private Procedure procedure;
-   
+    public GameObject procedureGameObject;
+    private Procedure procedure;
     private GenerateScene generateScene;
 
     private XRDirectInteractor interactor;
@@ -31,8 +30,8 @@ public class CountMushroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //procedure = procedureGameObject.GetComponent<Procedure>();
-        //generateScene = procedureGameObject.GetComponent<GenerateScene>();
+        procedure = procedureGameObject.GetComponent<Procedure>();
+        generateScene = procedureGameObject.GetComponent<GenerateScene>();
 
        // mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
        //   + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
@@ -40,7 +39,8 @@ public class CountMushroom : MonoBehaviour
 
     public void PickUp()
     {
-        
+        if (procedure.getPlayingGame())
+        {
             interactor.GetValidTargets(grabInteractables);
 
             foreach (var interactable in grabInteractables)
@@ -63,7 +63,7 @@ public class CountMushroom : MonoBehaviour
          //   mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
           //      + "Brown Mushrooms: " + brownMushroomCount.ToString() + " / " + generateScene.brownMushroom;
 
-        
+        }
     }
 
     public void resetCount()

@@ -11,27 +11,27 @@ public class CountCollision : MonoBehaviour
     public int collisionCount = 0;
     public TextMeshProUGUI countText;
 
-    public GameObject procedureGameObject;
-    private Procedure procedure;
+   // public GameObject procedureGameObject;
+    //private Procedure procedure;
 
     // Start is called before the first frame update
     void Start()
     {
         countText.text = "Collisions: " + collisionCount.ToString();
 
-        procedure = procedureGameObject.GetComponent<Procedure>();
+        //procedure = procedureGameObject.GetComponent<Procedure>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (procedure.getPlayingGame())
-        {
+        //if (procedure.getPlayingGame())
+        //{
             if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
             {
                 collisionCount++;
                 countText.text = "Collisions: " + collisionCount.ToString();
             }
-        }
+       // }
     }
 
     public void resetCount()

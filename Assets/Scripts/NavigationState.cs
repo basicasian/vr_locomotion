@@ -104,7 +104,7 @@ public class NavigationState : MonoBehaviour
                     currentState = NavigationStateEnum.N;
                     return;
         }
-        Debug.Log(getNavigationState());
+        //Debug.Log(getNavigationState());
 
     }
 
