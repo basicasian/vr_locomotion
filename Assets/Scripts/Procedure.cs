@@ -48,7 +48,7 @@ public class Procedure : MonoBehaviour
     private CountMushroom countMushroomScript;
     private DataRecording dataRecordingScript;
 
-    private bool generateMushrooms;
+    private bool generatedBrownMushrooms, canGenerateBrownMushrooms, generatedRedMushrooms, canGenerateRedMushrooms;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,10 @@ public class Procedure : MonoBehaviour
         generateSceneScript = GetComponent<GenerateScene>();
         dataRecordingScript = dataRecordingGameObject.GetComponent<DataRecording>();
 
-        generateMushrooms = false;
+        generatedBrownMushrooms = true;
+        canGenerateBrownMushrooms = false;
+        generatedRedMushrooms = true;
+        canGenerateRedMushrooms = false;
     }
 
     public Condition GetCondition()
@@ -130,10 +133,13 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if(!generateMushrooms && countMushroomScript.redMushroomCount != 1 && (countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 1)
-                if (generateMushrooms && countMushroomScript.redMushroomCount != 0 && (countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 0)
+            if((countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 1)
             {
-                generateMushrooms = false;
+                canGenerateRedMushrooms = true;
+            }
+            if ((canGenerateRedMushrooms && countMushroomScript.redMushroomCount != 0 && (countMushroomScript.redMushroomCount % generateSceneScript.redMushroom) == 0))
+            {
+                canGenerateRedMushrooms = false;
                 //gameText.text = "good job! \n all mushrooms found!";
                 //gameFinished();
                 //generate new mushrooms
@@ -142,13 +148,13 @@ public class Procedure : MonoBehaviour
             }
 
             // win condition
-            if(!generateMushrooms && countMushroomScript.brownMushroomCount != 1 && (countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 1)
+            if((countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 1)
             {
-                generateMushrooms = true;
+                canGenerateBrownMushrooms = true;
             }
-            if (generateMushrooms && countMushroomScript.brownMushroomCount != 0 && (countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 0)
+            if (canGenerateBrownMushrooms && countMushroomScript.brownMushroomCount != 0 && (countMushroomScript.brownMushroomCount % generateSceneScript.brownMushroom) == 0)
             {
-                generateMushrooms = false;
+                canGenerateBrownMushrooms = false;
                 //gameText.text = "good job! \n all mushrooms found!";
                 //gameFinished();
                 //generate new mushrooms
@@ -168,7 +174,7 @@ public class Procedure : MonoBehaviour
 
     public void SetGenerateMushroom(bool b)
     {
-        generateMushrooms = b;
+        generatedBrownMushrooms = b;
     }
 
     private void Awake()
