@@ -67,6 +67,15 @@ public class Procedure : MonoBehaviour
         canGenerateBrownMushrooms = false;
         generatedRedMushrooms = true;
         canGenerateRedMushrooms = false;
+
+        if (workspace.Equals(Workspace.S))
+        {
+            GameObject.Find("BigWS").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("SmallWS").SetActive(false);
+        }
     }
 
     public Condition GetCondition()

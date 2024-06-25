@@ -3184,7 +3184,7 @@ GameObject:
   - component: {fileID: 155894688}
   - component: {fileID: 155894687}
   m_Layer: 0
-  m_Name: Small
+  m_Name: SmallWS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19884,7 +19884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c506559e8b9b13448b6ff5465c2ffdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workspace: 0
+  workspace: 1
   ve: 0
   timelimit: 180
   gameText: {fileID: 898624086}
@@ -22362,7 +22362,7 @@ GameObject:
   - component: {fileID: 1176303086}
   - component: {fileID: 1176303085}
   m_Layer: 0
-  m_Name: Big
+  m_Name: BigWS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
