@@ -50,14 +50,14 @@ public class CountMushroom : MonoBehaviour
                 {
                     redMushroomCount++;
                     //interactable.transform.gameObject.SetActive(false);
-                    Destroy(interactable.transform.gameObject);
+                    Destroy(interactable.transform.parent.gameObject);
                 }
 
                 if (interactable.transform.CompareTag("BrownMushroom"))
                 {
                     brownMushroomCount++;
                     //interactable.transform.gameObject.SetActive(false);
-                    Destroy(interactable.transform.gameObject);
+                    Destroy(interactable.transform.parent.gameObject);
                 }
         //    }
          //   mushroomCountText.text = "Red Mushrooms: " + redMushroomCount.ToString() + " / " + generateScene.redMushroom + " \n"
