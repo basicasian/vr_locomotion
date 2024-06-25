@@ -16,7 +16,7 @@ public class BodyBasedSteering : MonoBehaviour
 
     private void Update()
     {
-        if (steeringReference.action.IsPressed() && isActive)
+        if (steeringReference.action.ReadValue<Vector2>().x > 0 && isActive)
         {
             Steering();
         }

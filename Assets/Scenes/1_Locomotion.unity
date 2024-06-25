@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028468, g: 0.22571579, b: 0.30692378, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2726,7 +2726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &139468462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,7 +5205,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1148749084}
   m_MatchOrientation: 0
   m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
@@ -5882,7 +5882,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1148749084}
   m_MatchOrientation: 0
   m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
@@ -8362,7 +8362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.02
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 10
+  m_LineLength: 5
   m_AutoAdjustLineLength: 0
   m_MinLineLength: 0.5
   m_UseDistanceToHitAsMaxLineLength: 1
@@ -8710,7 +8710,7 @@ MonoBehaviour:
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
-  m_AnchorRotationMode: 0
+  m_AnchorRotationMode: 1
   m_UIHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8801,7 +8801,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -8969560723029924837, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectActionValue:
     m_UseReference: 1
     m_Action:
@@ -9252,7 +9252,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1148749084}
   m_MatchOrientation: 0
   m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
@@ -9680,7 +9680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543348459
 Transform:
   m_ObjectHideFlags: 0
@@ -13665,7 +13665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783844406}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22d7b0210d3aa3240b5d0b698c49d5ba, type: 3}
   m_Name: 
@@ -20013,7 +20013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1036003663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21818,8 +21818,6 @@ GameObject:
   - component: {fileID: 1148749079}
   - component: {fileID: 1148749085}
   - component: {fileID: 1148749084}
-  - component: {fileID: 1148749083}
-  - component: {fileID: 1148749082}
   m_Layer: 0
   m_Name: Locomotion
   m_TagString: Untagged
@@ -21842,91 +21840,6 @@ Transform:
   m_Father: {fileID: 783844407}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1148749082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148749078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 1148749085}
-  m_MoveSpeed: 2
-  m_EnableStrafe: 1
-  m_EnableFly: 0
-  m_UseGravity: 1
-  m_GravityApplicationMode: 0
-  m_ForwardSource: {fileID: 153130380}
-  m_LeftHandMoveAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 1ea82c57-abe8-46fe-be00-09f81e27b1a8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightHandMoveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 96c0eb2e-ef8e-418a-9ce2-f7f6bc2cab28
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &1148749083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148749078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 1148749085}
-  m_TurnAmount: 45
-  m_DebounceTime: 0.5
-  m_EnableTurnLeftRight: 1
-  m_EnableTurnAround: 1
-  m_DelayTime: 0
-  m_LeftHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 4601e79d-80df-4adc-bc02-888656ee9692
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_RightHandSnapTurnAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 2fac10f2-7a00-476c-ab98-3b61114e799b
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!114 &1148749084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26235,7 +26148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1383405901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26249,12 +26162,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringReference: {fileID: 2290650948556951067, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  teleportationReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  teleportationReference: {fileID: -8969560723029924837, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.5
   distanceThreshold: 0.3
+  rotationThreshold: 10
 --- !u!114 &1383405902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26273,7 +26187,7 @@ MonoBehaviour:
   rightHandGameObject: {fileID: 1895453385}
   procedureGameObject: {fileID: 139468461}
   navigationState: {fileID: 1383405901}
-  distMushroom: {fileID: 1177830798}
+  distMushroom: {fileID: 139468462}
   distVE: {fileID: 783844414}
   distRE: {fileID: 153130388}
 --- !u!4 &1383405903
@@ -27846,7 +27760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482106333
 Transform:
   m_ObjectHideFlags: 0
@@ -28892,7 +28806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1575796351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28911,7 +28825,7 @@ MonoBehaviour:
   rightHandGameObject: {fileID: 1895453385}
   procedureGameObject: {fileID: 1036003662}
   navigationState: {fileID: 1575796353}
-  distMushroom: {fileID: 1177830798}
+  distMushroom: {fileID: 1036003663}
   distVE: {fileID: 783844414}
   distRE: {fileID: 153130388}
 --- !u!4 &1575796352
@@ -28942,12 +28856,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringReference: {fileID: 2290650948556951067, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  teleportationReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  teleportationReference: {fileID: -8969560723029924837, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.5
-  distanceThreshold: 0.3
+  distanceThreshold: 0.2
+  rotationThreshold: 10
 --- !u!1001 &1581101568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30870,12 +30785,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringReference: {fileID: 2290650948556951067, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  teleportationReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  teleportationReference: {fileID: -8969560723029924837, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.5
   distanceThreshold: 0.3
+  rotationThreshold: 10
 --- !u!114 &1710122136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34389,7 +34305,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1895453388
 MonoBehaviour:
@@ -34573,7 +34489,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -1963283232552115514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectActionValue:
     m_UseReference: 1
     m_Action:
@@ -34734,7 +34650,6 @@ MonoBehaviour:
   redMushroomCount: 0
   brownMushroomCount: 0
   mushroomCountText: {fileID: 544451233}
-  procedureGameObject: {fileID: 1036003662}
 --- !u!4 &1900103802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
@@ -36893,14 +36808,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033841915}
-  m_LocalRotation: {x: 0.38302222, y: 0.38302222, z: -0.17860618, w: 0.82139385}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 12.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: 50, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &2033841918
 MonoBehaviour:
   m_ObjectHideFlags: 0

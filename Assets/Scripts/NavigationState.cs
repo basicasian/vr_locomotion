@@ -14,8 +14,11 @@ public class NavigationState : MonoBehaviour
 
     private Vector3 previousLocation = Vector3.zero;
     private Vector3 differenceLocation = Vector3.zero;
+    private float previousRotation = 0;
+    private float differenceRotation = 0;
     public float timeThreshold;
     public float distanceThreshold;
+    public float rotationThreshold;
     private float countdownTime;
 
     private NavigationStateEnum currentState = NavigationStateEnum.N;
@@ -38,6 +41,8 @@ public class NavigationState : MonoBehaviour
             countdownTime = timeThreshold;
             differenceLocation = previousLocation - cameraGameObject.transform.position;
             previousLocation = cameraGameObject.transform.position;
+            differenceRotation = previousRotation - cameraGameObject.transform.rotation.eulerAngles.y;
+            previousRotation = cameraGameObject.transform.rotation.eulerAngles.y;
 
             /*
             Debug.Log("previous: " + previousLocation);
@@ -47,43 +52,42 @@ public class NavigationState : MonoBehaviour
             */
         }
 
-      /*  if (((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold)) &&
-              steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
-        {
-            currentState = NavigationStateEnum.WST;
-            return;
-        }
+        /*  if (((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold)) &&
+                steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+          {
+              currentState = NavigationStateEnum.WST;
+              return;
+          }
 
-        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf))
-        {
-            currentState = NavigationStateEnum.WS;
-            return;
-        }
-        if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
-        {
-            currentState = NavigationStateEnum.ST;
-            return;
-        }
+          if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf))
+          {
+              currentState = NavigationStateEnum.WS;
+              return;
+          }
+          if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+          {
+              currentState = NavigationStateEnum.ST;
+              return;
+          }
 
-        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
-        {
-            currentState = NavigationStateEnum.WT;
-            return;
-        }*/
+          if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold) && (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf))
+          {
+              currentState = NavigationStateEnum.WT;
+              return;
+          }*/
 
 
-        if (steeringReference.action.IsPressed() && xrOriginGameObject.activeSelf)
+        if (steeringReference.action.ReadValue<Vector2>().x > 0.1f && xrOriginGameObject.activeSelf)
         {
             currentState = NavigationStateEnum.S;
             return;
         }
-        // TODO: not sure how to access to teleportation trigger
-        if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf) 
+        else if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf)
         {
             currentState = NavigationStateEnum.T;
             return;
         }
-        if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
+        else if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
         {
             //Debug.Log("differenceLocation.x: " + Mathf.Abs(differenceLocation.x));
             //Debug.Log("differenceLocation.z: " + Mathf.Abs(differenceLocation.z));
@@ -91,10 +95,16 @@ public class NavigationState : MonoBehaviour
             currentState = NavigationStateEnum.W;
             return;
         }
+        else if (Mathf.Abs(differenceRotation) > rotationThreshold)
+        {
+            currentState = NavigationStateEnum.R;
+        }
 
-        currentState = NavigationStateEnum.N;
-        return;
-
+        else {
+                    currentState = NavigationStateEnum.N;
+                    return;
+        }
+        Debug.Log(getNavigationState());
 
     }
 
@@ -108,6 +118,7 @@ public class NavigationState : MonoBehaviour
 enum NavigationStateEnum
 { 
     N,
+    R,
     S,
     T,
     W,

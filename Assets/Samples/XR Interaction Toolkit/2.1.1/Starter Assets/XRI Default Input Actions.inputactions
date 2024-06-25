@@ -377,9 +377,9 @@
             "actions": [
                 {
                     "name": "Teleport Select",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "cbeaf823-3b69-4004-8ec8-13ea2ca3fc31",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -425,7 +425,7 @@
                 {
                     "name": "",
                     "id": "95fa1419-ca7b-4c8a-8d15-7d46e58d82e3",
-                    "path": "<XRController>{LeftHand}/Primary2DAxis",
+                    "path": "<XRController>{LeftHand}/triggerButton",
                     "interactions": "Sector(directions=-1,sweepBehavior=3)",
                     "processors": "",
                     "groups": "Noncontinuous Move",
@@ -714,7 +714,7 @@
                 {
                     "name": "",
                     "id": "1ce80054-410d-4112-a332-50faa7fb4f23",
-                    "path": "<XRController>{RightHand}/gripPressed",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -1379,28 +1379,10 @@
             "id": "8472feb4-b95f-4096-b818-c236d374aa13",
             "actions": [
                 {
-                    "name": "Toggle",
-                    "type": "Button",
-                    "id": "5fa0f37c-f4c6-424d-9e0f-363168e3ec43",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Colour",
-                    "type": "Value",
-                    "id": "35fbd273-06a0-4912-bf85-c39bbd5d3d2b",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Body Based Steering ",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "7117eb90-289f-4f23-956e-4b8d85bacc8d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1422,35 +1404,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Teleport",
+                    "type": "Button",
+                    "id": "226af53d-0723-43e7-a5fe-728ac7b3e52d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "cd8b5b81-a0ed-4524-8479-edf48d97db68",
-                    "path": "<ViveController>/trackpadClicked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c2a4955e-2e6f-4a71-8900-d6574af009b7",
-                    "path": "<ViveController>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Colour",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7bdbbcd5-4457-4c8b-a5b9-cbb20c957e88",
-                    "path": "<ViveController>{RightHand}/triggerPressed",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1461,7 +1430,7 @@
                 {
                     "name": "",
                     "id": "1a6f17b8-2ef8-45c9-a23b-f1c4b5e74e0b",
-                    "path": "<ViveController>/trackpadClicked",
+                    "path": "<OculusTouchController>/menu",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1472,11 +1441,22 @@
                 {
                     "name": "",
                     "id": "3de60417-27f5-4335-b585-d4a20c50488e",
-                    "path": "<ViveController>/gripPressed",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "PickUp Mushroom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f07c0e68-d67c-480f-a543-041ce11664ac",
+                    "path": "<OculusTouchController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
