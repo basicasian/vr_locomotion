@@ -25,10 +25,12 @@ public class DistanceTracker : MonoBehaviour
         totalDistance += distanceThisFrame;
 
         // Update the last position to the current position
-        lastPosition = transform.position;
+       if(local) lastPosition = transform.localPosition;
+       else lastPosition = transform.position;
 
         // Log the distance moved this frame and the total distance
-       // Debug.Log("Distance this frame: " + distanceThisFrame + " units");
-      //  Debug.Log("Total distance: " + totalDistance + " units");
+        // Debug.Log("Distance this frame: " + distanceThisFrame + " units");
+        if(local) Debug.Log("Total REAL distance: " + totalDistance + " units");
+        else Debug.Log("Total VIRTUAL distance: " + totalDistance + " units");
     }
 }
