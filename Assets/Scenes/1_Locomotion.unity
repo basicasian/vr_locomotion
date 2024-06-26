@@ -10245,8 +10245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7480a32c3bf226b4ca83512e6ca95362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redMushrooms: {fileID: 568046856}
-  brownMushrooms: {fileID: 640809197}
+  redMushrooms: {fileID: 997049216}
+  brownMushrooms: {fileID: 1788289394}
   prig: {fileID: 783844406}
   pcamera: {fileID: 153130379}
   closestMushroom: 0
@@ -11858,8 +11858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7480a32c3bf226b4ca83512e6ca95362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redMushrooms: {fileID: 568046856}
-  brownMushrooms: {fileID: 640809197}
+  redMushrooms: {fileID: 1176596033}
+  brownMushrooms: {fileID: 1002738116}
   prig: {fileID: 783844406}
   pcamera: {fileID: 153130379}
   closestMushroom: 0
@@ -13068,8 +13068,8 @@ MonoBehaviour:
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.5
-  distanceThreshold: 0.3
-  rotationThreshold: 10
+  distanceThreshold: 0.2
+  rotationThreshold: 30
 --- !u!114 &1383405902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14536,7 +14536,7 @@ MonoBehaviour:
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.5
   distanceThreshold: 0.2
-  rotationThreshold: 10
+  rotationThreshold: 30
 --- !u!1001 &1581101568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15403,8 +15403,8 @@ MonoBehaviour:
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
-  timeThreshold: 0.5
-  distanceThreshold: 0.3
+  timeThreshold: 0.2
+  distanceThreshold: 0.2
   rotationThreshold: 10
 --- !u!114 &1710122136
 MonoBehaviour:
