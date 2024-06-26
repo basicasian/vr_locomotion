@@ -13067,9 +13067,9 @@ MonoBehaviour:
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
-  timeThreshold: 0.5
-  distanceThreshold: 0.2
-  rotationThreshold: 30
+  timeThreshold: 0.2
+  distanceThreshold: 0.05
+  rotationThreshold: 4
 --- !u!114 &1383405902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14534,9 +14534,9 @@ MonoBehaviour:
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
-  timeThreshold: 0.5
-  distanceThreshold: 0.2
-  rotationThreshold: 30
+  timeThreshold: 0.2
+  distanceThreshold: 0.05
+  rotationThreshold: 4
 --- !u!1001 &1581101568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15404,8 +15404,8 @@ MonoBehaviour:
   rightHandGameObject: {fileID: 1895453385}
   cameraGameObject: {fileID: 153130379}
   timeThreshold: 0.2
-  distanceThreshold: 0.2
-  rotationThreshold: 10
+  distanceThreshold: 0.05
+  rotationThreshold: 4
 --- !u!114 &1710122136
 MonoBehaviour:
   m_ObjectHideFlags: 0
