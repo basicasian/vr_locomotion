@@ -226,6 +226,9 @@ public class Procedure : MonoBehaviour
             }
         }
         startGO.SetActive(false);
+        // activate distance tracker scripts
+        xrOriginGameObject.GetComponent<DistanceTracker>().enabled = true;
+        cameraGameObject.GetComponent<DistanceTracker>().enabled = true;
     }
 
     private void StartGame()
@@ -257,6 +260,9 @@ public class Procedure : MonoBehaviour
             }
         }
         startGO.SetActive(false);
+        // activate distance tracker scripts
+        xrOriginGameObject.GetComponent<DistanceTracker>().enabled = true;
+        cameraGameObject.GetComponent<DistanceTracker>().enabled = true;
     }
 
     private void gameFinished()

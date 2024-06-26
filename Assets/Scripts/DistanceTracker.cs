@@ -8,7 +8,7 @@ public class DistanceTracker : MonoBehaviour
 
     public bool local;
 
-    void Start()
+    void Awake()
     {
         // Initialize the last position to the starting position of the GameObject
         lastPosition = transform.position;
@@ -17,6 +17,7 @@ public class DistanceTracker : MonoBehaviour
 
     void Update()
     {
+
         // Calculate the distance moved this frame
        if(local) distanceThisFrame = Vector3.Distance(lastPosition, transform.localPosition);
         else distanceThisFrame = Vector3.Distance(lastPosition, transform.position);
