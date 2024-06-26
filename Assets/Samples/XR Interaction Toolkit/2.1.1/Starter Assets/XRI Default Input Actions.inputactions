@@ -1430,7 +1430,7 @@
                 {
                     "name": "",
                     "id": "1a6f17b8-2ef8-45c9-a23b-f1c4b5e74e0b",
-                    "path": "<OculusTouchController>/menu",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

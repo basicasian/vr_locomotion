@@ -111,7 +111,7 @@ public class Procedure : MonoBehaviour
                 cameraGameObject.transform.position.z < 0.25f && cameraGameObject.transform.position.z > -0.25f)
             {
                 startPosition = true;
-                gameText.text = "to start game press S key or menu button";
+                gameText.text = "to start game press S key or Xbutton";
             }
             else
             {
