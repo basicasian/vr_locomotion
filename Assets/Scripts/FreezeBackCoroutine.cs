@@ -8,7 +8,7 @@ public class FreezeBackCoroutine : MonoBehaviour
 {
     public GameObject cameraGameObject; // real life
     public GameObject xrOriginGameObject; // game
-
+    public GameObject cameraOffset;
     public GameObject sceneGameObject;
 
     float RLMinDistanceX;
@@ -126,7 +126,9 @@ public class FreezeBackCoroutine : MonoBehaviour
 
         // step 6
         // cancel the "virtual half turn"
-        xrOriginGameObject.transform.Rotate(new Vector3(0, 180, 0));
+        cameraOffset.transform.RotateAround(new Vector3(cameraGameObject.transform.position.x, 0, cameraGameObject.transform.position.z), Vector3.up, 180.0f);
+
+
         sceneGameObject.SetActive(true);
         gameText.text = "";
     }
