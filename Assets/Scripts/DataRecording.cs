@@ -6,7 +6,7 @@ using System;
 
 public class DataRecording : MonoBehaviour
 {
-    public string filename = "";
+    public string filenameT = "";
 
     private int redMushroomCount;
     private int brownMushroomCount;
@@ -79,7 +79,7 @@ public class DataRecording : MonoBehaviour
     {
         DateTime dt = DateTime.Now;
         //string dateString = dt.ToString("yyyy-MM-dd--HH-mm-ss");
-        filename = "DataRecording/" + procedure.GetCondition().ToString() + "-" + procedure.workspace.ToString() + "-" + procedure.ve.ToString() + ".csv";
+        string filename = "DataRecording/" + filenameT + "-" + procedure.GetCondition().ToString() + "-" + procedure.workspace.ToString() + "-" + procedure.ve.ToString() + ".csv";
 
         // false = overwrite
         tw = new StreamWriter(filename, false);
