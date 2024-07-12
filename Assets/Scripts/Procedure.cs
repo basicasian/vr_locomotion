@@ -231,8 +231,8 @@ public class Procedure : MonoBehaviour
         cameraGameObject.GetComponent<DistanceTracker>().enabled = true;
 
         // activate colliders workspace that prevented the generated of env
-        GameObject.Find("SmallWS").GetComponent<BoxCollider>().enabled = true;
-        GameObject.Find("BigWS").GetComponent<BoxCollider>().enabled = true;
+        if(workspace.Equals(Workspace.S)) GameObject.Find("SmallWS").GetComponent<BoxCollider>().enabled = true;
+        else GameObject.Find("BigWS").GetComponent<BoxCollider>().enabled = true;
 
     }
 
@@ -268,6 +268,10 @@ public class Procedure : MonoBehaviour
         // activate distance tracker scripts
         xrOriginGameObject.GetComponent<DistanceTracker>().enabled = true;
         cameraGameObject.GetComponent<DistanceTracker>().enabled = true;
+
+        // activate colliders workspace that prevented the generated of env
+        if (workspace.Equals(Workspace.S)) GameObject.Find("SmallWS").GetComponent<BoxCollider>().enabled = true;
+        else GameObject.Find("BigWS").GetComponent<BoxCollider>().enabled = true;
     }
 
     private void gameFinished()
