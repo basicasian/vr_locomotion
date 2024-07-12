@@ -5583,7 +5583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workspace: 0
   ve: 0
-  timelimit: 180
+  timelimit: 120
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
   startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -6933,7 +6933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56989511c6764e4d98b118cc8ed8ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: beta
+  filenameT: betaTest
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
@@ -7742,7 +7742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56989511c6764e4d98b118cc8ed8ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: beta
+  filenameT: betaTest
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
@@ -8240,7 +8240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56989511c6764e4d98b118cc8ed8ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: beta
+  filenameT: betaTest
   cameraGameObject: {fileID: 153130379}
   xrOriginGameObject: {fileID: 783844406}
   rightHandGameObject: {fileID: 1895453385}
