@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workspace: 0
   ve: 2
-  timelimit: 180
+  timelimit: 120
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
   startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -6158,7 +6158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workspace: 1
   ve: 1
-  timelimit: 180
+  timelimit: 120
   gameText: {fileID: 898624086}
   timerText: {fileID: 2072914073}
   startGameReference: {fileID: -3166791522155127001, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -9419,7 +9419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 2
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
