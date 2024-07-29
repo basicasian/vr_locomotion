@@ -22,7 +22,7 @@ public class NavigationState : MonoBehaviour
     private float countdownTime;
 
     private NavigationStateEnum currentState = NavigationStateEnum.N;
-    private NavigationStateEnum previousState;
+    private NavigationStateEnum previousState = NavigationStateEnum.N;
 
     // Start is called before the first frame update
     void Start()
@@ -52,28 +52,29 @@ public class NavigationState : MonoBehaviour
 
            }
 
-        previousState = currentState;
         if (steeringReference.action.ReadValue<Vector2>().x > 0 && xrOriginGameObject.activeSelf)
         {
-            currentState = NavigationStateEnum.S;            
+            currentState = NavigationStateEnum.S;
+            previousState = currentState;
         }
         else if (teleportationReference.action.IsPressed() && rightHandGameObject.activeSelf)
         {
-            currentState = NavigationStateEnum.T;            
+            currentState = NavigationStateEnum.T;
+            previousState = currentState;
         }
         else if ((Mathf.Abs(differenceLocation.x) > distanceThreshold || Mathf.Abs(differenceLocation.z) > distanceThreshold))
         {
-            currentState = NavigationStateEnum.W;            
+            currentState = NavigationStateEnum.W;
+            previousState = currentState;
         }
-        else if (Mathf.Abs(differenceRotation) > rotationThreshold)
-        {
-            currentState = NavigationStateEnum.R;
-        }
+        /* else if (Mathf.Abs(differenceRotation) > rotationThreshold)
+         {
+             currentState = NavigationStateEnum.R;
+         }*/
         else {
             currentState = NavigationStateEnum.N;
-        }        
+        }
         //Debug.Log(getNavigationState());
-
     }
 
     public string getNavigationState()
@@ -81,6 +82,10 @@ public class NavigationState : MonoBehaviour
         return currentState.ToString();
     }
 
+    public string getNavigationStateLT()
+    {
+        return previousState.ToString();
+    }
 }
 
 enum NavigationStateEnum

@@ -66,7 +66,7 @@ public class DataRecording : MonoBehaviour
                 + cameraGameObject.transform.localPosition.x + ";" + cameraGameObject.transform.localPosition.y + ";" + cameraGameObject.transform.localPosition.z + ";"
                 + xrOriginGameObject.transform.position.x + ";" + xrOriginGameObject.transform.position.y + ";" + xrOriginGameObject.transform.position.z + ";"
                 + cameraGameObject.transform.rotation.x + ";" + cameraGameObject.transform.rotation.y + ";" + cameraGameObject.transform.rotation.z + ";"
-                + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom + ";" + distVE.totalDistance + ";" + distRE.totalDistance );
+                + navigationState.getNavigationState() + ";" + distMushroom.closestMushroom + ";" + distVE.totalDistance + ";" + distRE.totalDistance + ";" + navigationState.getNavigationStateLT() );
         
     }
 
@@ -86,7 +86,7 @@ public class DataRecording : MonoBehaviour
         tw.WriteLine("FrameID;Time;CollisionCount;RedMushroomCount;BrownMushroomCount;" +
             "RLPositionX;RLPositionY;RLPositionZ;GamePositionX;GamePositionY;GamePositionZ;" +
             "RotationX;RotationY;RotationZ;" +
-            "NavigationState;" + "DistClosestMushroom;DistanceVE;DistanceRE");
+            "NavigationState;" + "DistClosestMushroom;DistanceVE;DistanceRE;NavigationStateLT");
 
         createdCSV = true;
     }
