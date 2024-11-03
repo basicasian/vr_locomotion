@@ -2,6 +2,8 @@
 
 This repository contains the code and assets for a virtual reality (VR) experimental platform developed to study user navigation behavior using various locomotion techniques. The project was implemented as part of a bachelor’s thesis to investigate how walking, steering, and teleportation techniques influence user interaction and preference in VR environments.
 
+![Start Screen](startscreen_cut.png)
+
 ## Project Overview
 
 The aim of this project is to explore user behavior in a VR environment where multiple locomotion techniques are available. Participants are tasked with collecting virtual mushrooms in a forest environment, using any combination of three primary locomotion techniques:
