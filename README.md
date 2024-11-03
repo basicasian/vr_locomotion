@@ -8,6 +8,8 @@ This repository contains the code and assets for a virtual reality (VR) experime
   <img src="grabbingmushroom.png" alt="Grabbing Mushroom" width="34%"/> 
 </p>
 
+**Creators:** Renate Zhang  
+
 ## Project Overview
 
 The aim of this project is to explore user behavior in a VR environment where multiple locomotion techniques are available. Participants are tasked with collecting virtual mushrooms in a forest environment, using any combination of three primary locomotion techniques:
