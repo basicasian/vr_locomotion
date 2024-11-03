@@ -27,7 +27,7 @@ The aim of this project is to explore user behavior in a VR environment where mu
 3. Ensure that the XR Interaction Toolkit and OpenXR plugins are installed via the Unity Package Manager.
 4. Connect your VR setup (HTC Vive recommended) and calibrate the VR environment.
 
-### Usage
+## Usage
 1. Load the main scene (MainScene.unity).
 2. Start the VR environment by pressing Play in Unity.
 3. Follow the instructions displayed in the VR HUD to calibrate your starting position.
