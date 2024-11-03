@@ -2,8 +2,8 @@
 
 This repository contains the code and assets for a virtual reality (VR) experimental platform developed to study user navigation behavior using various locomotion techniques. The project was implemented as part of a bachelor’s thesis to investigate how walking, steering, and teleportation techniques influence user interaction and preference in VR environments.
 
-<img src="startscreen_cut.png" alt="Start Screen" width="500"/>
-<img src="calibration_spot.png" alt="Calibration Spot" width="500"/>
+<img src="startscreen_cut.png" alt="Start Screen" width="400"/>
+<img src="calibration_spot.png" alt="Calibration Spot" width="400"/>
 <img src="grabbingmushroom.png" alt="Grabbing Mushroom" width="500"/>
 
 ## Project Overview
