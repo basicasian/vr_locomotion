@@ -5,28 +5,39 @@ using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 using TMPro;
 
+// IMPORTANT: has to be attached to main camera because of the capsule collider 
 public class CountCollision : MonoBehaviour
 {
-    public XROrigin xrOrigin = null;
-
-    private int count = 0;
+    public int collisionCount = 0;
     public TextMeshProUGUI countText;
+
+    public GameObject procedureGameObject;
+    private Procedure procedure;
 
     // Start is called before the first frame update
     void Start()
     {
-        countText.text = "Collisions: " + count.ToString();
+        countText.text = "Collisions: " + collisionCount.ToString();
+
+        procedure = procedureGameObject.GetComponent<Procedure>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
+        if (procedure.getPlayingGame())
         {
-            Debug.Log("not a red or brown mushroom");
-            count++;
-            countText.text = "Collisions: " + count.ToString();
+            if (other.tag != "RedMushroom" && other.tag != "BrownMushroom")
+            {
+                collisionCount++;
+                countText.text = "Collisions: " + collisionCount.ToString();
+            }
         }
-       
+    }
+
+    public void resetCount()
+    {
+        collisionCount = 0;
+        countText.text = "Collisions: " + collisionCount.ToString();
     }
 
 }
