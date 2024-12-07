@@ -9,6 +9,7 @@ This repository contains the code and assets for a virtual reality (VR) experime
 </p>
 
 **Creators:** Renate Zhang  
+**Supervisor:**: Hugo Brument
 
 ## Project Overview
 
@@ -28,12 +29,6 @@ The aim of this project is to explore user behavior in a VR environment where mu
 - Unity 2023 or later
 - HTC Vive VR setup (or compatible VR headset with controllers)
 - [OpenXR](https://www.khronos.org/openxr/) plugin installed in Unity
-
-### Installation
-1. Clone this repository.
-2. Open the project in Unity.
-3. Ensure that the XR Interaction Toolkit and OpenXR plugins are installed via the Unity Package Manager.
-4. Connect your VR setup (HTC Vive recommended) and calibrate the VR environment.
 
 ## Usage
 1. Load the main scene (MainScene.unity).
