@@ -9,7 +9,7 @@ This repository contains the code and assets for a virtual reality (VR) experime
 </p>
 
 **Creators:** Renate Zhang  
-**Supervisor:**: Hugo Brument
+**Supervisor:** Hugo Brument
 
 ## Project Overview
 
